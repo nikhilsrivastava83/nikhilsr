@@ -7,9 +7,8 @@ Copy the template, paste it to your GitHub README and edit! -->
 
 Final project for the Building AI course
 
-## Build AI Project Assignment
-
-Describe briefly in 2-3 sentences what your project is about. About 250 characters is a nice length! 
+## Summary 
+Build AI Project Assignment and upload a picture on it.
 
 
 ## Background
