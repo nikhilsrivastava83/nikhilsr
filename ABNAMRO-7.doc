@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>[#ABNAMRO-7] F02 - OC_01 - Product Offering Discovery - Offer List - anonymous</title>
+    <meta http-equiv="Content-Type" Content="application/vnd.ms-word; charset=UTF-8">
+        <style type="text/css">
+
+.tableBorder, .grid
+{
+    background-color: #fff;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tableBorder td, .grid td
+{
+    vertical-align: top;
+    padding: 2px;
+    border: 1px solid #ccc;
+}
+
+.noPadding
+{
+    padding: 0 !important;
+}
+
+h3 .subText
+{
+    font-size: 60%;
+    font-weight: normal;
+}
+
+.tabLabel
+{
+    font-weight: bold;
+    border: 1px solid #ccc;
+    border-bottom:none;
+    padding: 2px;
+    display: inline;
+}
+
+td.blank
+{
+    padding: 0;
+    margin: 0;
+}
+
+.blank td
+{
+    border: none;
+}
+
+#descriptionArea
+{
+    margin: 0;
+    padding: 2px;
+    border: 1px solid #ccc;
+}
+
+hr
+{
+    border-top:1px solid #aaa;
+}
+
+hr.fullcontent
+{
+  height: 15px;
+  padding: 10px 0;
+  background: #fff url('https://jira/images/icons/hr.gif') no-repeat scroll center;
+}
+
+</style>
+
+</head>
+<body>
+
+<table class="tableBorder" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td bgcolor="#f0f0f0" width="100%" colspan="2" valign="top">
+                            <h3 class="formtitle">
+                        [ABNAMRO-7]&nbsp;<a href="https://jira/browse/ABNAMRO-7">F02 - OC_01 - Product Offering Discovery - Offer List - anonymous</a>
+            <span class="subText">
+               Created: 23/Mar/25                   &nbsp;Updated: 24/Apr/25
+
+                                            </span>
+            </h3>
+        </td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Status:</b></td>
+        <td width="80%">Open</td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Project:</b></td>
+        <td width="80%"><a href="https://jira/secure/BrowseProject.jspa?id=23401">ABN AMRO D1 POC</a></td>
+    </tr>
+
+        <tr>
+            <td><b>Component/s:</b></td>
+            <td>
+                            None
+                </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Affects Version/s:</b></td>
+            <td>
+                            None
+                </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Fix Version/s:</b></td>
+            <td>
+                            None
+                </td>
+    </tr>
+    
+    </table>
+
+<br />
+<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td bgcolor="#f0f0f0" valign="top" width="20%">
+            <b>Type:</b>
+        </td>
+        <td bgcolor="#ffffff" valign="top"  width="30%" >
+            Feature
+        </td>
+
+                    <td bgcolor="#f0f0f0">
+                <b>Priority:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap>
+                High
+            </td>
+            </tr>
+    <tr>
+                        <td bgcolor="#f0f0f0" valign="top" width="20%">
+                <b>Reporter:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top"  width="30%" >
+                                            <a class="user-hover" rel="NISSIMLE" id="word_reporter_NISSIMLE" href="https://jira/secure/ViewProfile.jspa?name=NISSIMLE">Nissim Levy (CRM)</a>
+                            </td>
+        
+                    <td bgcolor="#f0f0f0" width="20%">
+                <b>Assignee:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap  width="30%" >
+                                    Unassigned
+                            </td>
+            </tr>
+    	<tr>
+		<td bgcolor="#f0f0f0" width="20%">
+			<b>Resolution:</b>
+		</td>
+		<td bgcolor="#ffffff" valign="top" width="30%" nowrap>
+            				Unresolved
+                    </td>
+                    <td bgcolor="#f0f0f0" width="20%">
+                <b>Votes:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" width="30%" nowrap>
+                0
+            </td>
+        
+    </tr>
+    
+        <tr>
+        <td bgcolor="#f0f0f0" width="20%">
+            <b>Labels:</b>
+        </td>
+        <td id="labels-2486305-value" class="value" bgcolor="#ffffff" valign="top" colspan="3" nowrap>
+                            None
+                    </td>
+    </tr>
+    
+    	<tr>
+        		<td bgcolor="#f0f0f0" width="20%"><b>Remaining Estimate:</b></td>
+        <td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Not Specified
+            		</td>
+    </tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Time Spent:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Not Specified
+            		</td>
+	</tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Original Estimate:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Not Specified
+            		</td>
+    </tr>
+    
+    </table>
+
+
+
+    <br />
+
+    	<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+            
+
+        
+            <tr>
+            <td bgcolor="#f0f0f0" width="20%" valign="top">
+                <b>Issue Links:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" class="noPadding">
+                <table cellpadding="0" cellspacing="0" border="0" width="100%" class="blank">
+                                            <tr>
+                            <td colspan="4" bgcolor="#f0f0f0">
+                                <b>Feature-Epic Link</b><br/>
+                            </td>
+                        </tr>
+                                    <tr>
+            <td>
+                Child Epic
+            </td>
+            <td>
+                <a href="https://jira/browse/ABNAMRO-20">
+                     ABNAMRO-20                 </a>
+            </td>
+            <td>
+                US01 - F02 - OC01- Product Offering D...
+            </td>
+            <td>
+                Open
+            </td>
+        </tr>
+                                                                            <tr>
+                            <td colspan="4" bgcolor="#f0f0f0">
+                                <b>Gantt End to Start</b><br/>
+                            </td>
+                        </tr>
+                                                                <tr>
+            <td>
+                has to be done after
+            </td>
+            <td>
+                <a href="https://jira/browse/ABNAMRO-25">
+                     ABNAMRO-25                 </a>
+            </td>
+            <td>
+                F10 - OC_01 - C1- Basic Payment Packa...
+            </td>
+            <td>
+                Open
+            </td>
+        </tr>
+                                        </table>
+            </td>
+        </tr>
+    
+
+
+
+                        <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>Acceptance Criteria:</b></td>
+                <td id="customfield_38618-2486305-value" class="value" bgcolor="#ffffff" width="80%">
+
+
+
+
+
+
+                                    
+        
+        <div id="customfield_38618"
+            class="o-checklist"
+            data-jira-project-key-pattern="([A-Z][A-Z0-9]+)"
+            data-checklist="[]"
+            data-checklist-mode="preview"
+            data-checklist-context="{&quot;permissionScheme&quot;:{&quot;ALL&quot;:{&quot;generallyCan&quot;:true,&quot;rules&quot;:[]},&quot;CHANGE_DUE_DATE&quot;:{&quot;parent&quot;:&quot;WORK_ON_ITEM&quot;,&quot;rules&quot;:[{&quot;type&quot;:&quot;SERVER&quot;,&quot;value&quot;:true}]},&quot;CHECK_ITEM&quot;:{&quot;parent&quot;:&quot;WORK_ON_ITEM&quot;,&quot;rules&quot;:[{&quot;type&quot;:&quot;SERVER&quot;,&quot;value&quot;:true}]},&quot;INTERACT_WITH_TEMPLATE&quot;:{&quot;parent&quot;:&quot;ALL&quot;,&quot;generallyCan&quot;:true,&quot;rules&quot;:[]},&quot;CHANGE_PRIORITY&quot;:{&quot;parent&quot;:&quot;WORK_ON_ITEM&quot;,&quot;rules&quot;:[{&quot;type&quot;:&quot;SERVER&quot;,&quot;value&quot;:true}]},&quot;CHANGE_STATUS&quot;:{&quot;parent&quot;:&quot;WORK_ON_ITEM&quot;,&quot;rules&quot;:[{&quot;type&quot;:&quot;SERVER&quot;,&quot;value&quot;:true}]},&quot;CREATE_ITEM&quot;:{&quot;parent&quot;:&quot;EDIT_CHECKLIST&quot;,&quot;rules&quot;:[{&quot;type&quot;:&quot;SERVER&quot;,&quot;value&quot;:true}]},&quot;DELETE_ITEM&quot;:{&quot;parent&quot;:&quot;EDIT_CHECKLIST&quot;,&quot;rules&quot;:[{&quot;type&quot;:&quot;SERVER&quot;,&quot;value&quot;:true}]},&quot;CONVERT_TO_ISSUE&quot;:{&quot;parent&quot;:&quot;ALL&quot;,&quot;rules&quot;:[{&quot;type&quot;:&quot;SERVER&quot;,&quot;value&quot;:true}]},&quot;EDIT_ITEM&quot;:{&quot;parent&quot;:&quot;EDIT_CHECKLIST&quot;,&quot;rules&quot;:[{&quot;type&quot;:&quot;SERVER&quot;,&quot;value&quot;:true}]},&quot;CHANGE_ASSIGNEE&quot;:{&quot;parent&quot;:&quot;WORK_ON_ITEM&quot;,&quot;rules&quot;:[{&quot;type&quot;:&quot;SERVER&quot;,&quot;value&quot;:true}]},&quot;TOGGLE_MANDATORY&quot;:{&quot;parent&quot;:&quot;WORK_ON_ITEM&quot;,&quot;rules&quot;:[{&quot;type&quot;:&quot;SERVER&quot;,&quot;value&quot;:true}]},&quot;EDIT_CHECKLIST&quot;:{&quot;parent&quot;:&quot;ALL&quot;,&quot;generallyCan&quot;:true,&quot;rules&quot;:[]},&quot;WORK_ON_ITEM&quot;:{&quot;parent&quot;:&quot;ALL&quot;,&quot;generallyCan&quot;:true,&quot;rules&quot;:[]},&quot;REORDER_ITEM&quot;:{&quot;parent&quot;:&quot;EDIT_CHECKLIST&quot;,&quot;rules&quot;:[{&quot;type&quot;:&quot;SERVER&quot;,&quot;value&quot;:true}]},&quot;MANAGE_OWNED_TEMPLATES&quot;:{&quot;parent&quot;:&quot;INTERACT_WITH_TEMPLATE&quot;,&quot;rules&quot;:[{&quot;type&quot;:&quot;SERVER&quot;,&quot;value&quot;:true}]},&quot;IMPORT_TEMPLATE&quot;:{&quot;parent&quot;:&quot;INTERACT_WITH_TEMPLATE&quot;,&quot;rules&quot;:[{&quot;type&quot;:&quot;SERVER&quot;,&quot;value&quot;:true}]}},&quot;appParameters&quot;:{&quot;historyDateFormat&quot;:&quot;yyyy-MM-dd HH:mm Z&quot;,&quot;allowProjectAdminsToConfigure&quot;:false,&quot;cleverChangelog&quot;:true,&quot;validateGlobalItems&quot;:true,&quot;showContactSupport&quot;:false,&quot;allowIssueConversion&quot;:true,&quot;showChecklistsInAgileDetailsView&quot;:true,&quot;showProvideFeedback&quot;:true,&quot;issuePanelViewWeight&quot;:250,&quot;issueSidePanelViewWeight&quot;:50,&quot;agileSidePanelViewWeight&quot;:1000},&quot;canConvertToSubtask&quot;:true,&quot;canLinkIssues&quot;:true,&quot;loggedInUser&quot;:&quot;NIKHILSR&quot;,&quot;viewLocation&quot;:&quot;DEFAULT&quot;,&quot;fieldType&quot;:&quot;CHECKLIST&quot;,&quot;savesOnEdit&quot;:false,&quot;id&quot;:38618,&quot;isTemplateViewLocation&quot;:false,&quot;isGlobalItemsViewLocation&quot;:false,&quot;isDefaultItemsViewLocation&quot;:false,&quot;issueId&quot;:2486305,&quot;customFieldId&quot;:&quot;customfield_38618&quot;,&quot;projectId&quot;:23401,&quot;projectKey&quot;:&quot;ABNAMRO&quot;,&quot;fieldConfigId&quot;:45018,&quot;issueKey&quot;:&quot;ABNAMRO-7&quot;,&quot;statuses&quot;:[],&quot;parameters&quot;:{&quot;version&quot;:7,&quot;discretionaryOptionIds&quot;:[],&quot;statusCsv&quot;:&quot;notApplicable, N/A, Default, Complete, Keep\r\ninProgress, In Progress, Current, Incomplete, Remove\r\nblocked, Blocked, Error, Incomplete, Remove&quot;,&quot;showStatusMenu&quot;:false,&quot;allowLocalItems&quot;:true,&quot;allowMandatory&quot;:true,&quot;lockOnResolution&quot;:true,&quot;canConvertToIssue&quot;:true,&quot;canBulkEdit&quot;:true,&quot;canBulkComplete&quot;:true,&quot;issueLinkType&quot;:null,&quot;canAssignUsers&quot;:false,&quot;canSetDueDate&quot;:false,&quot;canSetPriority&quot;:false,&quot;enableAdvancedMarkdown&quot;:false,&quot;enableExternalAssetLinking&quot;:false,&quot;enableHeaderItems&quot;:true,&quot;enableHeaderItemCollapsing&quot;:true,&quot;showHeaderItemSummaries&quot;:true,&quot;defaultHeaderCollapsedState&quot;:&quot;Expanded&quot;,&quot;defaultMandatoryState&quot;:true,&quot;limitChecklistWidth&quot;:true,&quot;showProgressHeaderInReadOnlyView&quot;:true,&quot;showProgressHeaderInEditView&quot;:true,&quot;strikeThrough&quot;:true,&quot;showMore&quot;:false,&quot;showMoreCount&quot;:0,&quot;alwaysShowEmptyChecklist&quot;:true,&quot;alwaysShowUncheckedChecklist&quot;:true,&quot;hideUncheckedInReadonlyView&quot;:false,&quot;issueViewDisplayMode&quot;:&quot;CustomField&quot;,&quot;summarySource&quot;:&quot;AllItems&quot;,&quot;bannerParameters&quot;:{&quot;completedLabel&quot;:&quot;&quot;,&quot;allMandatoryLabel&quot;:&quot;&quot;,&quot;incompleteLabel&quot;:&quot;&quot;,&quot;emptyLabel&quot;:&quot;&quot;,&quot;type&quot;:&quot;Progression&quot;,&quot;appearance&quot;:&quot;Normal&quot;},&quot;assigneeDisplay&quot;:&quot;Avatar&quot;,&quot;descriptionDisplay&quot;:&quot;LinkUnderItem&quot;,&quot;compactView&quot;:false,&quot;checklistPermissionSchemeId&quot;:null,&quot;reporterCanEdit&quot;:true,&quot;allCanComplete&quot;:true,&quot;limitEditionWithRoles&quot;:false,&quot;editRoleIds&quot;:[],&quot;canImportTemplateIntoChecklist&quot;:true,&quot;canCreateTemplateFromChecklist&quot;:true,&quot;createTemplateFromChecklistRoleIds&quot;:[],&quot;useConfluenceRenderer&quot;:true}}"
+            data-checklist-userstore="[{&quot;userName&quot;:&quot;NIKHILSR&quot;,&quot;displayName&quot;:&quot;Nikhil Srivastava&quot;,&quot;email&quot;:&quot;Nikhil.Srivastava@amdocs.com&quot;,&quot;avatarURL&quot;:&quot;https://www.gravatar.com/avatar/3ffc0b42fc35b3addc6b2fc032252d24?d=mm&amp;s=16&quot;,&quot;description&quot;:&quot;Nikhil Srivastava - Nikhil.Srivastava@amdocs.com (NIKHILSR)&quot;}]"
+            data-checklist-prioritystore="[{&quot;id&quot;:&quot;10000&quot;,&quot;name&quot;:&quot;Showstopper&quot;,&quot;iconUrl&quot;:&quot;https://jira/images/icons/priorities/blocker.svg&quot;,&quot;statusColor&quot;:&quot;#000000&quot;},{&quot;id&quot;:&quot;10001&quot;,&quot;name&quot;:&quot;Critical&quot;,&quot;iconUrl&quot;:&quot;https://jira/images/icons/priorities/critical.svg&quot;,&quot;statusColor&quot;:&quot;#990000&quot;},{&quot;id&quot;:&quot;1&quot;,&quot;name&quot;:&quot;Highest&quot;,&quot;iconUrl&quot;:&quot;https://jira/images/icons/priorities/highest.svg&quot;,&quot;statusColor&quot;:&quot;#d04437&quot;},{&quot;id&quot;:&quot;2&quot;,&quot;name&quot;:&quot;High&quot;,&quot;iconUrl&quot;:&quot;https://jira/images/icons/priorities/high.svg&quot;,&quot;statusColor&quot;:&quot;#f15C75&quot;},{&quot;id&quot;:&quot;6&quot;,&quot;name&quot;:&quot;Major&quot;,&quot;iconUrl&quot;:&quot;https://jira/images/icons/priority_major.gif&quot;,&quot;statusColor&quot;:&quot;#009900&quot;},{&quot;id&quot;:&quot;3&quot;,&quot;name&quot;:&quot;Medium&quot;,&quot;iconUrl&quot;:&quot;https://jira/images/icons/priorities/medium.svg&quot;,&quot;statusColor&quot;:&quot;#f79232&quot;},{&quot;id&quot;:&quot;4&quot;,&quot;name&quot;:&quot;Low&quot;,&quot;iconUrl&quot;:&quot;https://jira/images/icons/priorities/low.svg&quot;,&quot;statusColor&quot;:&quot;#707070&quot;},{&quot;id&quot;:&quot;5&quot;,&quot;name&quot;:&quot;Lowest&quot;,&quot;iconUrl&quot;:&quot;https://jira/images/icons/priorities/lowest.svg&quot;,&quot;statusColor&quot;:&quot;#999999&quot;},{&quot;id&quot;:&quot;10100&quot;,&quot;name&quot;:&quot;Blocker&quot;,&quot;iconUrl&quot;:&quot;https://jira/images/icons/priorities/blocker.svg&quot;,&quot;statusColor&quot;:&quot;#000000&quot;},{&quot;id&quot;:&quot;10101&quot;,&quot;name&quot;:&quot;NFT Blocked &quot;,&quot;iconUrl&quot;:&quot;https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyElCXxEtmDA4EvzGKm1zygmlBxMgv0AJefjADgPAyOYOT6wQO&quot;,&quot;statusColor&quot;:&quot;#00ff00&quot;},{&quot;id&quot;:&quot;10102&quot;,&quot;name&quot;:&quot;Normal&quot;,&quot;iconUrl&quot;:&quot;https://jira/images/icons/priorities/trivial.svg&quot;,&quot;statusColor&quot;:&quot;#ffff33&quot;},{&quot;id&quot;:&quot;10103&quot;,&quot;name&quot;:&quot;Tentative&quot;,&quot;iconUrl&quot;:&quot;https://jira/images/icons/priorities/low.svg&quot;,&quot;statusColor&quot;:&quot;#00A3DD&quot;},{&quot;id&quot;:&quot;10104&quot;,&quot;name&quot;:&quot;Minor&quot;,&quot;iconUrl&quot;:&quot;https://jira/images/icons/priorities/high.svg&quot;,&quot;statusColor&quot;:&quot;#ff8f73&quot;},{&quot;id&quot;:&quot;10105&quot;,&quot;name&quot;:&quot;Trivial&quot;,&quot;iconUrl&quot;:&quot;https://jira/images/icons/priorities/high.svg&quot;,&quot;statusColor&quot;:&quot;#ff8f73&quot;},{&quot;id&quot;:&quot;10200&quot;,&quot;name&quot;:&quot;None&quot;,&quot;iconUrl&quot;:&quot;https://jira/images/icons/priorities/trivial.svg&quot;,&quot;statusColor&quot;:&quot;#ffffff&quot;}]"
+                    >
+            <div class="o-checklist-subcontainer">
+                                    <span class="o-empty-indicator aui-lozenge aui-lozenge-complete">Empty</span>
+                
+                                                    <div class="o-checklist-header"></div>
+    
+                                          
+
+
+
+
+                                      </div>
+        </div>
+    </td>
+            </tr>
+                                                                                                                                                            <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>HLD Status:</b></td>
+                <td id="customfield_13007-2486305-value" class="value" bgcolor="#ffffff" width="80%">    Not Done
+</td>
+            </tr>
+                        </table>
+
+    <br/>
+
+    <table cellpadding="2" cellspacing="0" border="0" width="100%" align="center">
+    <tr>
+        <td bgcolor="#bbbbbb" width="1%" nowrap align="center">
+            &nbsp;<font color="#ffffff"><b>Description</b></font>&nbsp;
+        </td>
+        <td>&nbsp;</td>
+    </tr>
+    </table>
+
+    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td id="descriptionArea">
+            <div class='je_rdata_container je_html' style='text-align:start'><div class='je_preview'><div class="ewa-rteLine" style="color:#242424; cursor:text; font-family:&quot;Aptos Narrow&quot;,Calibri,&quot;sans-serif&quot;,&quot;Mongolian Baiti&quot;,&quot;Microsoft Yi Baiti&quot;,&quot;Javanese Text&quot;,&quot;Yu Gothic&quot;; font-size:14.6667px; height:auto; overflow:hidden; padding-right:10px; text-align:left; text-decoration-thickness:initial; white-space:pre-wrap"><span style="color:#000000; display:inline; float:none; text-decoration-thickness:initial">GET /productOffering - display a list of sellable product offerings from&nbsp;</span><b style="-webkit-text-stroke-width:0px; background-color:#ffffff; color:#000000; font-family:-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,Roboto,Oxygen,Ubuntu,&quot;Fira Sans&quot;,&quot;Droid Sans&quot;,&quot;Helvetica Neue&quot;,sans-serif; font-size:14px; font-style:normal; font-variant-caps:normal; font-variant-ligatures:normal; letter-spacing:normal; orphans:2; text-align:start; text-decoration-color:initial; text-decoration-style:initial; text-decoration-thickness:initial; text-indent:0px; text-transform:none; white-space:normal; widows:2; word-spacing:0px">CatalogONE </b><b style="-webkit-text-stroke-width:0px; background-color:#ffffff; color:#000000; font-family:-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,Roboto,Oxygen,Ubuntu,&quot;Fira Sans&quot;,&quot;Droid Sans&quot;,&quot;Helvetica Neue&quot;,sans-serif; font-size:14px; font-style:normal; font-variant-caps:normal; font-variant-ligatures:normal; letter-spacing:normal; orphans:2; text-align:start; text-decoration-color:initial; text-decoration-style:initial; text-decoration-thickness:initial; text-indent:0px; text-transform:none; white-space:normal; widows:2; word-spacing:0px">by filter criteria</b></div>
+
+<div class="ewa-rteLine" style="color:#242424; cursor:text; font-family:&quot;Aptos Narrow&quot;,Calibri,&quot;sans-serif&quot;,&quot;Mongolian Baiti&quot;,&quot;Microsoft Yi Baiti&quot;,&quot;Javanese Text&quot;,&quot;Yu Gothic&quot;; font-size:14.6667px; height:auto; overflow:hidden; padding-right:10px; text-align:left; text-decoration-thickness:initial; white-space:pre-wrap">&nbsp;</div>
+
+<div class="ewa-rteLine" style="cursor:text; height:auto; overflow:hidden; padding-right:10px; text-align:left; text-decoration-thickness:initial; text-wrap-mode:wrap"><span style="color:#000000"><span style="background-color:#ffffff">This feature focus on anonymous and check the following use cases:</span></span></div>
+
+<ul style="margin-bottom:1em; margin-left:0px; margin-right:0px; margin-top:0px; text-align:left; text-decoration-thickness:initial">
+	<li style="margin: 10px 0px 0px; text-decoration-thickness: initial;"><span style="color:#000000"><span><b>By Category</b> -&nbsp;</span></span><span style="color:#000000; display:inline; float:none; text-align:left; text-decoration-thickness:initial">Fetches all product offerings within a specific category name. such as </span><b><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="color:#a02b93">Payment&nbsp;Bundles.</span></span></span></b></li>
+	<li style="color: rgb(0, 0, 0);"><span style="color:#000000"><b>By Relation Role</b><span>&nbsp;</span>– Retrieves product offerings based on their business type, such as </span><b><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="color:#a02b93">Payment Account Bundle.</span></span></span></b></li>
+	<li style="color: rgb(0, 0, 0);"><b>By Filter Criteria</b> -&nbsp;<span style="color:#000000">Retrieves product offerings based on </span>one of the characteristic defined as filterable in C1.</li>
+	<li style="color: rgb(0, 0, 0);"><b>By Product Offering Name</b> - search product offering by name. such as&nbsp;<b><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="color:#a02b93">Payment.</span></span></span></b></li>
+</ul>
+
+<p class="ewa-rteLine" style="cursor:text; height:auto; overflow:hidden; padding-right:10px; text-align:left; text-decoration-thickness:initial; text-wrap-mode:wrap">&nbsp;</p></div><div class='je_sep' style='display:none'>&nbsp;&zwnj;</div><div class='je_cdata' style='display:none'><!--&lt;div class="ewa-rteLine" style="color:#242424; cursor:text; font-family:&amp;quot;Aptos Narrow&amp;quot;,Calibri,&amp;quot;sans-serif&amp;quot;,&amp;quot;Mongolian Baiti&amp;quot;,&amp;quot;Microsoft Yi Baiti&amp;quot;,&amp;quot;Javanese Text&amp;quot;,&amp;quot;Yu Gothic&amp;quot;; font-size:14.6667px; height:auto; overflow:hidden; padding-right:10px; text-align:left; text-decoration-thickness:initial; white-space:pre-wrap"&gt;&lt;span style="color:#000000; display:inline; float:none; text-decoration-thickness:initial"&gt;GET /productOffering - display a list of sellable product offerings from&amp;nbsp;&lt;/span&gt;&lt;b data-end="214" data-start="200" style="-webkit-text-stroke-width:0px; background-color:#ffffff; color:#000000; font-family:-apple-system,BlinkMacSystemFont,&amp;quot;Segoe UI&amp;quot;,Roboto,Oxygen,Ubuntu,&amp;quot;Fira Sans&amp;quot;,&amp;quot;Droid Sans&amp;quot;,&amp;quot;Helvetica Neue&amp;quot;,sans-serif; font-size:14px; font-style:normal; font-variant-caps:normal; font-variant-ligatures:normal; letter-spacing:normal; orphans:2; text-align:start; text-decoration-color:initial; text-decoration-style:initial; text-decoration-thickness:initial; text-indent:0px; text-transform:none; white-space:normal; widows:2; word-spacing:0px"&gt;CatalogONE &lt;/b&gt;&lt;b data-end="214" data-start="200" style="-webkit-text-stroke-width:0px; background-color:#ffffff; color:#000000; font-family:-apple-system,BlinkMacSystemFont,&amp;quot;Segoe UI&amp;quot;,Roboto,Oxygen,Ubuntu,&amp;quot;Fira Sans&amp;quot;,&amp;quot;Droid Sans&amp;quot;,&amp;quot;Helvetica Neue&amp;quot;,sans-serif; font-size:14px; font-style:normal; font-variant-caps:normal; font-variant-ligatures:normal; letter-spacing:normal; orphans:2; text-align:start; text-decoration-color:initial; text-decoration-style:initial; text-decoration-thickness:initial; text-indent:0px; text-transform:none; white-space:normal; widows:2; word-spacing:0px"&gt;by filter criteria&lt;/b&gt;&lt;/div&gt;
+
+&lt;div class="ewa-rteLine" style="color:#242424; cursor:text; font-family:&amp;quot;Aptos Narrow&amp;quot;,Calibri,&amp;quot;sans-serif&amp;quot;,&amp;quot;Mongolian Baiti&amp;quot;,&amp;quot;Microsoft Yi Baiti&amp;quot;,&amp;quot;Javanese Text&amp;quot;,&amp;quot;Yu Gothic&amp;quot;; font-size:14.6667px; height:auto; overflow:hidden; padding-right:10px; text-align:left; text-decoration-thickness:initial; white-space:pre-wrap"&gt;&amp;nbsp;&lt;/div&gt;
+
+&lt;div class="ewa-rteLine" style="cursor:text; height:auto; overflow:hidden; padding-right:10px; text-align:left; text-decoration-thickness:initial; text-wrap-mode:wrap"&gt;&lt;span face="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Fira Sans, Droid Sans, Helvetica Neue, sans-serif" style="color:#000000"&gt;&lt;span style="background-color:#ffffff"&gt;This feature focus on anonymous and check the following use cases:&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
+
+&lt;ul style="margin-bottom:1em; margin-left:0px; margin-right:0px; margin-top:0px; text-align:left; text-decoration-thickness:initial"&gt;
+	&lt;li style="margin: 10px 0px 0px; text-decoration-thickness: initial;"&gt;&lt;span face="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Fira Sans, Droid Sans, Helvetica Neue, sans-serif" style="color:#000000"&gt;&lt;span&gt;&lt;b&gt;By Category&lt;/b&gt; -&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;span style="color:#000000; display:inline; float:none; text-align:left; text-decoration-thickness:initial"&gt;Fetches all product offerings within a specific category name. such as &lt;/span&gt;&lt;b&gt;&lt;span style="font-size:11pt"&gt;&lt;span style="font-family:Aptos,sans-serif"&gt;&lt;span style="color:#a02b93"&gt;Payment&amp;nbsp;Bundles.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/b&gt;&lt;/li&gt;
+	&lt;li data-end="582" data-start="453" style="color: rgb(0, 0, 0);"&gt;&lt;span style="color:#000000"&gt;&lt;b data-end="472" data-start="455"&gt;By Relation Role&lt;/b&gt;&lt;span&gt;&amp;nbsp;&lt;/span&gt;– Retrieves product offerings based on their business type, such as &lt;/span&gt;&lt;b&gt;&lt;span style="font-size:11pt"&gt;&lt;span style="font-family:Aptos,sans-serif"&gt;&lt;span style="color:#a02b93"&gt;Payment Account Bundle.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/b&gt;&lt;/li&gt;
+	&lt;li data-end="582" data-start="453" style="color: rgb(0, 0, 0);"&gt;&lt;b&gt;By Filter Criteria&lt;/b&gt; -&amp;nbsp;&lt;span style="color:#000000"&gt;Retrieves product offerings based on &lt;/span&gt;one of the characteristic defined as filterable in C1.&lt;/li&gt;
+	&lt;li data-end="582" data-start="453" style="color: rgb(0, 0, 0);"&gt;&lt;b&gt;By Product Offering Name&lt;/b&gt; - search product offering by name. such as&amp;nbsp;&lt;b&gt;&lt;span style="font-size:11pt"&gt;&lt;span style="font-family:Aptos,sans-serif"&gt;&lt;span style="color:#a02b93"&gt;Payment.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/b&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p class="ewa-rteLine" style="cursor:text; height:auto; overflow:hidden; padding-right:10px; text-align:left; text-decoration-thickness:initial; text-wrap-mode:wrap"&gt;&amp;nbsp;&lt;/p&gt;
+--></div><div class='je_cdata_js je_cgt' style='display:none'><!----></div><div class='je_cdata_styles je_cgt' style='display:none'><!----></div><div class='je_pr_rrj je_cgt' style='display:none'><!--[{"from":"https://onejira/","to":"https://jira/"}]--></div><div class='je_pr_ssj je_cgt' style='display:none'><!--{"sf":true,"dir_auto":true,"rs":true}--></div><div class='je_pr_atj je_cgt' style='display:none'><!--[]--></div><span class='jeditor_renderer' renderer='html' key='ABNAMRO-7' name='72d64bb4f372e7b1d0cedb3f7cbd8a0b' style='display:none'></span></div>
+            <br/>
+        </td>
+    </tr>
+    </table>
+
+Generated at Tue Jun 17 10:49:27 IDT 2025 by Nikhil Srivastava using Jira 9.12.22#9120022-sha1:231fbc3c75fa86a561ac9db4a71074080d297458.
+
+</body>
+</html>
