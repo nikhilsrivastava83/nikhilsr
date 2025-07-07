@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>[#ABNAMRO-5] F01 - OC_01 - Product Offering Discovery - Browsing Category </title>
+    <meta http-equiv="Content-Type" Content="application/vnd.ms-word; charset=UTF-8">
+        <style type="text/css">
+
+.tableBorder, .grid
+{
+    background-color: #fff;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tableBorder td, .grid td
+{
+    vertical-align: top;
+    padding: 2px;
+    border: 1px solid #ccc;
+}
+
+.noPadding
+{
+    padding: 0 !important;
+}
+
+h3 .subText
+{
+    font-size: 60%;
+    font-weight: normal;
+}
+
+.tabLabel
+{
+    font-weight: bold;
+    border: 1px solid #ccc;
+    border-bottom:none;
+    padding: 2px;
+    display: inline;
+}
+
+td.blank
+{
+    padding: 0;
+    margin: 0;
+}
+
+.blank td
+{
+    border: none;
+}
+
+#descriptionArea
+{
+    margin: 0;
+    padding: 2px;
+    border: 1px solid #ccc;
+}
+
+hr
+{
+    border-top:1px solid #aaa;
+}
+
+hr.fullcontent
+{
+  height: 15px;
+  padding: 10px 0;
+  background: #fff url('https://jira/images/icons/hr.gif') no-repeat scroll center;
+}
+
+</style>
+
+</head>
+<body>
+
+<table class="tableBorder" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td bgcolor="#f0f0f0" width="100%" colspan="2" valign="top">
+                            <h3 class="formtitle">
+                        [ABNAMRO-5]&nbsp;<a href="https://jira/browse/ABNAMRO-5">F01 - OC_01 - Product Offering Discovery - Browsing Category </a>
+            <span class="subText">
+               Created: 23/Mar/25                   &nbsp;Updated: 24/Apr/25
+
+                                            </span>
+            </h3>
+        </td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Status:</b></td>
+        <td width="80%">Open</td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Project:</b></td>
+        <td width="80%"><a href="https://jira/secure/BrowseProject.jspa?id=23401">ABN AMRO D1 POC</a></td>
+    </tr>
+
+        <tr>
+            <td><b>Component/s:</b></td>
+            <td>
+                            None
+                </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Affects Version/s:</b></td>
+            <td>
+                            None
+                </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Fix Version/s:</b></td>
+            <td>
+                            None
+                </td>
+    </tr>
+    
+    </table>
+
+<br />
+<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td bgcolor="#f0f0f0" valign="top" width="20%">
+            <b>Type:</b>
+        </td>
+        <td bgcolor="#ffffff" valign="top"  width="30%" >
+            Feature
+        </td>
+
+                    <td bgcolor="#f0f0f0">
+                <b>Priority:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap>
+                High
+            </td>
+            </tr>
+    <tr>
+                        <td bgcolor="#f0f0f0" valign="top" width="20%">
+                <b>Reporter:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top"  width="30%" >
+                                            <a class="user-hover" rel="NISSIMLE" id="word_reporter_NISSIMLE" href="https://jira/secure/ViewProfile.jspa?name=NISSIMLE">Nissim Levy (CRM)</a>
+                            </td>
+        
+                    <td bgcolor="#f0f0f0" width="20%">
+                <b>Assignee:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap  width="30%" >
+                                    Unassigned
+                            </td>
+            </tr>
+    	<tr>
+		<td bgcolor="#f0f0f0" width="20%">
+			<b>Resolution:</b>
+		</td>
+		<td bgcolor="#ffffff" valign="top" width="30%" nowrap>
+            				Unresolved
+                    </td>
+                    <td bgcolor="#f0f0f0" width="20%">
+                <b>Votes:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" width="30%" nowrap>
+                0
+            </td>
+        
+    </tr>
+    
+        <tr>
+        <td bgcolor="#f0f0f0" width="20%">
+            <b>Labels:</b>
+        </td>
+        <td id="labels-2486303-value" class="value" bgcolor="#ffffff" valign="top" colspan="3" nowrap>
+                            None
+                    </td>
+    </tr>
+    
+    	<tr>
+        		<td bgcolor="#f0f0f0" width="20%"><b>Remaining Estimate:</b></td>
+        <td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Not Specified
+            		</td>
+    </tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Time Spent:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Not Specified
+            		</td>
+	</tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Original Estimate:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Not Specified
+            		</td>
+    </tr>
+    
+    </table>
+
+
+
+    <br />
+
+    	<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+            
+
+        
+            <tr>
+            <td bgcolor="#f0f0f0" width="20%" valign="top">
+                <b>Issue Links:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" class="noPadding">
+                <table cellpadding="0" cellspacing="0" border="0" width="100%" class="blank">
+                                            <tr>
+                            <td colspan="4" bgcolor="#f0f0f0">
+                                <b>Feature-Epic Link</b><br/>
+                            </td>
+                        </tr>
+                                    <tr>
+            <td>
+                Child Epic
+            </td>
+            <td>
+                <a href="https://jira/browse/ABNAMRO-6">
+                     ABNAMRO-6                 </a>
+            </td>
+            <td>
+                US01 - F01 - OC_01 certification US f...
+            </td>
+            <td>
+                Open
+            </td>
+        </tr>
+                                                                            <tr>
+                            <td colspan="4" bgcolor="#f0f0f0">
+                                <b>Gantt End to Start</b><br/>
+                            </td>
+                        </tr>
+                                                                <tr>
+            <td>
+                has to be done after
+            </td>
+            <td>
+                <a href="https://jira/browse/ABNAMRO-25">
+                     ABNAMRO-25                 </a>
+            </td>
+            <td>
+                F10 - OC_01 - C1- Basic Payment Packa...
+            </td>
+            <td>
+                Open
+            </td>
+        </tr>
+                                        </table>
+            </td>
+        </tr>
+    
+
+
+
+                        <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>Acceptance Criteria:</b></td>
+                <td id="customfield_38618-2486303-value" class="value" bgcolor="#ffffff" width="80%">
+
+
+
+
+
+
+                                                                                                                                    
+        
+        <div id="customfield_38618"
+            class="o-checklist"
+            data-jira-project-key-pattern="([A-Z][A-Z0-9]+)"
+            data-checklist="[{&quot;id&quot;:1,&quot;name&quot;:&quot;Successful Category List Retrieval by Self Service Sale Channel (GET /category)&quot;,&quot;mandatory&quot;:true,&quot;rank&quot;:0,&quot;statusId&quot;:&quot;none&quot;,&quot;dueDate&quot;:null,&quot;isHeader&quot;:false,&quot;checked&quot;:false,&quot;priorityId&quot;:null,&quot;assigneeIds&quot;:[],&quot;globalItemId&quot;:0,&quot;version&quot;:&quot;5.0&quot;,&quot;linkedIssueKey&quot;:null}, {&quot;id&quot;:2,&quot;name&quot;:&quot;Successful Retrieval of Specific Category Details (GET /category/{id}) by name or/and id&quot;,&quot;mandatory&quot;:true,&quot;rank&quot;:1,&quot;statusId&quot;:&quot;none&quot;,&quot;dueDate&quot;:null,&quot;isHeader&quot;:false,&quot;checked&quot;:false,&quot;priorityId&quot;:null,&quot;assigneeIds&quot;:[],&quot;globalItemId&quot;:0,&quot;version&quot;:&quot;5.0&quot;,&quot;linkedIssueKey&quot;:null}, {&quot;id&quot;:3,&quot;name&quot;:&quot;Rany Day Scenario - Empty Tree from non-defined Sale Channel (GET /category)&quot;,&quot;mandatory&quot;:true,&quot;rank&quot;:2,&quot;statusId&quot;:&quot;none&quot;,&quot;dueDate&quot;:null,&quot;isHeader&quot;:false,&quot;checked&quot;:false,&quot;priorityId&quot;:null,&quot;assigneeIds&quot;:[],&quot;globalItemId&quot;:0,&quot;version&quot;:&quot;5.0&quot;,&quot;linkedIssueKey&quot;:null}]"
+            data-checklist-mode="preview"
+            data-checklist-context="{&quot;permissionScheme&quot;:{&quot;ALL&quot;:{&quot;generallyCan&quot;:true,&quot;rules&quot;:[]},&quot;CHANGE_DUE_DATE&quot;:{&quot;parent&quot;:&quot;WORK_ON_ITEM&quot;,&quot;rules&quot;:[{&quot;type&quot;:&quot;SERVER&quot;,&quot;value&quot;:true}]},&quot;CHECK_ITEM&quot;:{&quot;parent&quot;:&quot;WORK_ON_ITEM&quot;,&quot;rules&quot;:[{&quot;type&quot;:&quot;SERVER&quot;,&quot;value&quot;:true}]},&quot;INTERACT_WITH_TEMPLATE&quot;:{&quot;parent&quot;:&quot;ALL&quot;,&quot;generallyCan&quot;:true,&quot;rules&quot;:[]},&quot;CHANGE_PRIORITY&quot;:{&quot;parent&quot;:&quot;WORK_ON_ITEM&quot;,&quot;rules&quot;:[{&quot;type&quot;:&quot;SERVER&quot;,&quot;value&quot;:true}]},&quot;CHANGE_STATUS&quot;:{&quot;parent&quot;:&quot;WORK_ON_ITEM&quot;,&quot;rules&quot;:[{&quot;type&quot;:&quot;SERVER&quot;,&quot;value&quot;:true}]},&quot;CREATE_ITEM&quot;:{&quot;parent&quot;:&quot;EDIT_CHECKLIST&quot;,&quot;rules&quot;:[{&quot;type&quot;:&quot;SERVER&quot;,&quot;value&quot;:true}]},&quot;DELETE_ITEM&quot;:{&quot;parent&quot;:&quot;EDIT_CHECKLIST&quot;,&quot;rules&quot;:[{&quot;type&quot;:&quot;SERVER&quot;,&quot;value&quot;:true}]},&quot;CONVERT_TO_ISSUE&quot;:{&quot;parent&quot;:&quot;ALL&quot;,&quot;rules&quot;:[{&quot;type&quot;:&quot;SERVER&quot;,&quot;value&quot;:true}]},&quot;EDIT_ITEM&quot;:{&quot;parent&quot;:&quot;EDIT_CHECKLIST&quot;,&quot;rules&quot;:[{&quot;type&quot;:&quot;SERVER&quot;,&quot;value&quot;:true}]},&quot;CHANGE_ASSIGNEE&quot;:{&quot;parent&quot;:&quot;WORK_ON_ITEM&quot;,&quot;rules&quot;:[{&quot;type&quot;:&quot;SERVER&quot;,&quot;value&quot;:true}]},&quot;TOGGLE_MANDATORY&quot;:{&quot;parent&quot;:&quot;WORK_ON_ITEM&quot;,&quot;rules&quot;:[{&quot;type&quot;:&quot;SERVER&quot;,&quot;value&quot;:true}]},&quot;EDIT_CHECKLIST&quot;:{&quot;parent&quot;:&quot;ALL&quot;,&quot;generallyCan&quot;:true,&quot;rules&quot;:[]},&quot;WORK_ON_ITEM&quot;:{&quot;parent&quot;:&quot;ALL&quot;,&quot;generallyCan&quot;:true,&quot;rules&quot;:[]},&quot;REORDER_ITEM&quot;:{&quot;parent&quot;:&quot;EDIT_CHECKLIST&quot;,&quot;rules&quot;:[{&quot;type&quot;:&quot;SERVER&quot;,&quot;value&quot;:true}]},&quot;MANAGE_OWNED_TEMPLATES&quot;:{&quot;parent&quot;:&quot;INTERACT_WITH_TEMPLATE&quot;,&quot;rules&quot;:[{&quot;type&quot;:&quot;SERVER&quot;,&quot;value&quot;:true}]},&quot;IMPORT_TEMPLATE&quot;:{&quot;parent&quot;:&quot;INTERACT_WITH_TEMPLATE&quot;,&quot;rules&quot;:[{&quot;type&quot;:&quot;SERVER&quot;,&quot;value&quot;:true}]}},&quot;appParameters&quot;:{&quot;historyDateFormat&quot;:&quot;yyyy-MM-dd HH:mm Z&quot;,&quot;allowProjectAdminsToConfigure&quot;:false,&quot;cleverChangelog&quot;:true,&quot;validateGlobalItems&quot;:true,&quot;showContactSupport&quot;:false,&quot;allowIssueConversion&quot;:true,&quot;showChecklistsInAgileDetailsView&quot;:true,&quot;showProvideFeedback&quot;:true,&quot;issuePanelViewWeight&quot;:250,&quot;issueSidePanelViewWeight&quot;:50,&quot;agileSidePanelViewWeight&quot;:1000},&quot;canConvertToSubtask&quot;:true,&quot;canLinkIssues&quot;:true,&quot;loggedInUser&quot;:&quot;NIKHILSR&quot;,&quot;viewLocation&quot;:&quot;DEFAULT&quot;,&quot;fieldType&quot;:&quot;CHECKLIST&quot;,&quot;savesOnEdit&quot;:false,&quot;id&quot;:38618,&quot;isTemplateViewLocation&quot;:false,&quot;isGlobalItemsViewLocation&quot;:false,&quot;isDefaultItemsViewLocation&quot;:false,&quot;issueId&quot;:2486303,&quot;customFieldId&quot;:&quot;customfield_38618&quot;,&quot;projectId&quot;:23401,&quot;projectKey&quot;:&quot;ABNAMRO&quot;,&quot;fieldConfigId&quot;:45018,&quot;issueKey&quot;:&quot;ABNAMRO-5&quot;,&quot;statuses&quot;:[],&quot;parameters&quot;:{&quot;version&quot;:7,&quot;discretionaryOptionIds&quot;:[],&quot;statusCsv&quot;:&quot;notApplicable, N/A, Default, Complete, Keep\r\ninProgress, In Progress, Current, Incomplete, Remove\r\nblocked, Blocked, Error, Incomplete, Remove&quot;,&quot;showStatusMenu&quot;:false,&quot;allowLocalItems&quot;:true,&quot;allowMandatory&quot;:true,&quot;lockOnResolution&quot;:true,&quot;canConvertToIssue&quot;:true,&quot;canBulkEdit&quot;:true,&quot;canBulkComplete&quot;:true,&quot;issueLinkType&quot;:null,&quot;canAssignUsers&quot;:false,&quot;canSetDueDate&quot;:false,&quot;canSetPriority&quot;:false,&quot;enableAdvancedMarkdown&quot;:false,&quot;enableExternalAssetLinking&quot;:false,&quot;enableHeaderItems&quot;:true,&quot;enableHeaderItemCollapsing&quot;:true,&quot;showHeaderItemSummaries&quot;:true,&quot;defaultHeaderCollapsedState&quot;:&quot;Expanded&quot;,&quot;defaultMandatoryState&quot;:true,&quot;limitChecklistWidth&quot;:true,&quot;showProgressHeaderInReadOnlyView&quot;:true,&quot;showProgressHeaderInEditView&quot;:true,&quot;strikeThrough&quot;:true,&quot;showMore&quot;:false,&quot;showMoreCount&quot;:0,&quot;alwaysShowEmptyChecklist&quot;:true,&quot;alwaysShowUncheckedChecklist&quot;:true,&quot;hideUncheckedInReadonlyView&quot;:false,&quot;issueViewDisplayMode&quot;:&quot;CustomField&quot;,&quot;summarySource&quot;:&quot;AllItems&quot;,&quot;bannerParameters&quot;:{&quot;completedLabel&quot;:&quot;&quot;,&quot;allMandatoryLabel&quot;:&quot;&quot;,&quot;incompleteLabel&quot;:&quot;&quot;,&quot;emptyLabel&quot;:&quot;&quot;,&quot;type&quot;:&quot;Progression&quot;,&quot;appearance&quot;:&quot;Normal&quot;},&quot;assigneeDisplay&quot;:&quot;Avatar&quot;,&quot;descriptionDisplay&quot;:&quot;LinkUnderItem&quot;,&quot;compactView&quot;:false,&quot;checklistPermissionSchemeId&quot;:null,&quot;reporterCanEdit&quot;:true,&quot;allCanComplete&quot;:true,&quot;limitEditionWithRoles&quot;:false,&quot;editRoleIds&quot;:[],&quot;canImportTemplateIntoChecklist&quot;:true,&quot;canCreateTemplateFromChecklist&quot;:true,&quot;createTemplateFromChecklistRoleIds&quot;:[],&quot;useConfluenceRenderer&quot;:true}}"
+            data-checklist-userstore="[{&quot;userName&quot;:&quot;NIKHILSR&quot;,&quot;displayName&quot;:&quot;Nikhil Srivastava&quot;,&quot;email&quot;:&quot;Nikhil.Srivastava@amdocs.com&quot;,&quot;avatarURL&quot;:&quot;https://www.gravatar.com/avatar/3ffc0b42fc35b3addc6b2fc032252d24?d=mm&amp;s=16&quot;,&quot;description&quot;:&quot;Nikhil Srivastava - Nikhil.Srivastava@amdocs.com (NIKHILSR)&quot;}]"
+            data-checklist-prioritystore="[{&quot;id&quot;:&quot;10000&quot;,&quot;name&quot;:&quot;Showstopper&quot;,&quot;iconUrl&quot;:&quot;https://jira/images/icons/priorities/blocker.svg&quot;,&quot;statusColor&quot;:&quot;#000000&quot;},{&quot;id&quot;:&quot;10001&quot;,&quot;name&quot;:&quot;Critical&quot;,&quot;iconUrl&quot;:&quot;https://jira/images/icons/priorities/critical.svg&quot;,&quot;statusColor&quot;:&quot;#990000&quot;},{&quot;id&quot;:&quot;1&quot;,&quot;name&quot;:&quot;Highest&quot;,&quot;iconUrl&quot;:&quot;https://jira/images/icons/priorities/highest.svg&quot;,&quot;statusColor&quot;:&quot;#d04437&quot;},{&quot;id&quot;:&quot;2&quot;,&quot;name&quot;:&quot;High&quot;,&quot;iconUrl&quot;:&quot;https://jira/images/icons/priorities/high.svg&quot;,&quot;statusColor&quot;:&quot;#f15C75&quot;},{&quot;id&quot;:&quot;6&quot;,&quot;name&quot;:&quot;Major&quot;,&quot;iconUrl&quot;:&quot;https://jira/images/icons/priority_major.gif&quot;,&quot;statusColor&quot;:&quot;#009900&quot;},{&quot;id&quot;:&quot;3&quot;,&quot;name&quot;:&quot;Medium&quot;,&quot;iconUrl&quot;:&quot;https://jira/images/icons/priorities/medium.svg&quot;,&quot;statusColor&quot;:&quot;#f79232&quot;},{&quot;id&quot;:&quot;4&quot;,&quot;name&quot;:&quot;Low&quot;,&quot;iconUrl&quot;:&quot;https://jira/images/icons/priorities/low.svg&quot;,&quot;statusColor&quot;:&quot;#707070&quot;},{&quot;id&quot;:&quot;5&quot;,&quot;name&quot;:&quot;Lowest&quot;,&quot;iconUrl&quot;:&quot;https://jira/images/icons/priorities/lowest.svg&quot;,&quot;statusColor&quot;:&quot;#999999&quot;},{&quot;id&quot;:&quot;10100&quot;,&quot;name&quot;:&quot;Blocker&quot;,&quot;iconUrl&quot;:&quot;https://jira/images/icons/priorities/blocker.svg&quot;,&quot;statusColor&quot;:&quot;#000000&quot;},{&quot;id&quot;:&quot;10101&quot;,&quot;name&quot;:&quot;NFT Blocked &quot;,&quot;iconUrl&quot;:&quot;https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyElCXxEtmDA4EvzGKm1zygmlBxMgv0AJefjADgPAyOYOT6wQO&quot;,&quot;statusColor&quot;:&quot;#00ff00&quot;},{&quot;id&quot;:&quot;10102&quot;,&quot;name&quot;:&quot;Normal&quot;,&quot;iconUrl&quot;:&quot;https://jira/images/icons/priorities/trivial.svg&quot;,&quot;statusColor&quot;:&quot;#ffff33&quot;},{&quot;id&quot;:&quot;10103&quot;,&quot;name&quot;:&quot;Tentative&quot;,&quot;iconUrl&quot;:&quot;https://jira/images/icons/priorities/low.svg&quot;,&quot;statusColor&quot;:&quot;#00A3DD&quot;},{&quot;id&quot;:&quot;10104&quot;,&quot;name&quot;:&quot;Minor&quot;,&quot;iconUrl&quot;:&quot;https://jira/images/icons/priorities/high.svg&quot;,&quot;statusColor&quot;:&quot;#ff8f73&quot;},{&quot;id&quot;:&quot;10105&quot;,&quot;name&quot;:&quot;Trivial&quot;,&quot;iconUrl&quot;:&quot;https://jira/images/icons/priorities/high.svg&quot;,&quot;statusColor&quot;:&quot;#ff8f73&quot;},{&quot;id&quot;:&quot;10200&quot;,&quot;name&quot;:&quot;None&quot;,&quot;iconUrl&quot;:&quot;https://jira/images/icons/priorities/trivial.svg&quot;,&quot;statusColor&quot;:&quot;#ffffff&quot;}]"
+                    >
+            <div class="o-checklist-subcontainer">
+                
+                                                    <div class="o-checklist-header"></div>
+    
+                                          
+
+
+
+
+                        <div style="display: flex; align-items: center; width: 100%; padding: 0; margin-left: 0; float: none; font-size: 14px;">
+                            <span style="align-self: flex-start; font-family: Lucida Console;">
+                    [&nbsp]*                </span>
+                        <span style="width: 100%; padding-left: 5px; cursor: default; text-align: left;">
+                                
+                                
+                                <span style="">
+                    Successful Category List Retrieval by Self Service Sale Channel (GET /category)
+                </span>
+
+                                                        
+                    
+                                        
+                                                </span>
+        </div>
+                            <div style="display: flex; align-items: center; width: 100%; padding: 0; margin-left: 0; float: none; font-size: 14px;">
+                            <span style="align-self: flex-start; font-family: Lucida Console;">
+                    [&nbsp]*                </span>
+                        <span style="width: 100%; padding-left: 5px; cursor: default; text-align: left;">
+                                
+                                
+                                <span style="">
+                    Successful Retrieval of Specific Category Details (GET /category/{id}) by name or/and id
+                </span>
+
+                                                        
+                    
+                                        
+                                                </span>
+        </div>
+                            <div style="display: flex; align-items: center; width: 100%; padding: 0; margin-left: 0; float: none; font-size: 14px;">
+                            <span style="align-self: flex-start; font-family: Lucida Console;">
+                    [&nbsp]*                </span>
+                        <span style="width: 100%; padding-left: 5px; cursor: default; text-align: left;">
+                                
+                                
+                                <span style="">
+                    Rany Day Scenario - Empty Tree from non-defined Sale Channel (GET /category)
+                </span>
+
+                                                        
+                    
+                                        
+                                                </span>
+        </div>
+                                          </div>
+        </div>
+    </td>
+            </tr>
+                                                                                                                                                            <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>HLD Status:</b></td>
+                <td id="customfield_13007-2486303-value" class="value" bgcolor="#ffffff" width="80%">    Not Done
+</td>
+            </tr>
+                        </table>
+
+    <br/>
+
+    <table cellpadding="2" cellspacing="0" border="0" width="100%" align="center">
+    <tr>
+        <td bgcolor="#bbbbbb" width="1%" nowrap align="center">
+            &nbsp;<font color="#ffffff"><b>Description</b></font>&nbsp;
+        </td>
+        <td>&nbsp;</td>
+    </tr>
+    </table>
+
+    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td id="descriptionArea">
+            <div class='je_rdata_container je_html' style='text-align:start'><div class='je_preview'><p style="margin-bottom:0px; margin-left:0px; margin-right:0px; margin-top:10px; text-decoration-thickness:initial"><b><span style="color:#000000">GET /category</span></b></p>
+
+<p style="margin-bottom:0px; margin-left:0px; margin-right:0px; margin-top:10px; text-decoration-thickness:initial"><span style="color:#000000">The<span>&nbsp;</span><b>Browse Category</b><span>&nbsp;</span>capability enables retrieving a category list from C1 by sales channel.&nbsp;Each category in the list is returned with its category code (a unique name) and category display name.</span></p>
+
+<p style="margin-bottom:0px; margin-left:0px; margin-right:0px; margin-top:10px; text-decoration-thickness:initial"><b><span style="color:#000000">GET /category/{id}</span></b></p>
+
+<p style="margin-bottom:0px; margin-left:0px; margin-right:0px; margin-top:10px; text-decoration-thickness:initial"><span style="color:#000000; display:inline; float:none; text-decoration-thickness:initial">The Category Details capability (GET /category)/{id}) allows retrieving a specific category using its identifier (either ID or name).</span></p>
+
+<p style="margin-bottom:0px; margin-left:0px; margin-right:0px; margin-top:10px; text-decoration-thickness:initial">&nbsp;</p>
+
+<p style="margin-bottom:0px; margin-left:0px; margin-right:0px; margin-top:10px; text-decoration-thickness:initial"><span style="color:#000000; display:inline; float:none; text-decoration-thickness:initial">The Feature Certified the above operations. </span></p>
+
+<p style="margin-bottom:0px; margin-left:0px; margin-right:0px; margin-top:10px; text-decoration-thickness:initial"><span style="color:#000000; display:inline; float:none; text-decoration-thickness:initial">Return Browsing Categories by <b>Self Service</b>&nbsp;Channel from ABN AMRO&nbsp;C1.</span></p>
+
+<p style="margin-bottom:0px; margin-left:0px; margin-right:0px; margin-top:10px; text-decoration-thickness:initial"><span style="color:#000000; display:inline; float:none; text-decoration-thickness:initial">e.g:</span></p>
+
+<ul>
+	<li style="margin: 10px 0px 0px; text-decoration-thickness: initial;">Personal
+	<ul>
+		<li style="margin: 10px 0px 0px; text-decoration-thickness: initial;">Bundles
+		<ul>
+			<li style="margin: 10px 0px 0px; text-decoration-thickness: initial;">Payment Bundles</li>
+		</ul>
+		</li>
+	</ul>
+	</li>
+	<li style="margin: 10px 0px 0px; text-decoration-thickness: initial;">Commercial</li>
+	<li style="margin: 10px 0px 0px; text-decoration-thickness: initial;">Private Banking</li>
+</ul>
+
+<p style="margin-bottom:0px; margin-left:0px; margin-right:0px; margin-top:10px; text-decoration-thickness:initial">&nbsp;</p>
+
+<p style="margin-bottom:0px; margin-left:0px; margin-right:0px; margin-top:10px; text-decoration-thickness:initial">&nbsp;</p></div><div class='je_sep' style='display:none'>&nbsp;&zwnj;</div><div class='je_cdata' style='display:none'><!--&lt;p style="margin-bottom:0px; margin-left:0px; margin-right:0px; margin-top:10px; text-decoration-thickness:initial"&gt;&lt;b&gt;&lt;span style="color:#000000"&gt;GET /category&lt;/span&gt;&lt;/b&gt;&lt;/p&gt;
+
+&lt;p style="margin-bottom:0px; margin-left:0px; margin-right:0px; margin-top:10px; text-decoration-thickness:initial"&gt;&lt;span style="color:#000000"&gt;The&lt;span&gt;&amp;nbsp;&lt;/span&gt;&lt;b&gt;Browse Category&lt;/b&gt;&lt;span&gt;&amp;nbsp;&lt;/span&gt;capability enables retrieving a category list from C1 by sales channel.&amp;nbsp;Each category in the list is returned with its category code (a unique name) and category display name.&lt;/span&gt;&lt;/p&gt;
+
+&lt;p style="margin-bottom:0px; margin-left:0px; margin-right:0px; margin-top:10px; text-decoration-thickness:initial"&gt;&lt;b&gt;&lt;span style="color:#000000"&gt;GET /category/{id}&lt;/span&gt;&lt;/b&gt;&lt;/p&gt;
+
+&lt;p style="margin-bottom:0px; margin-left:0px; margin-right:0px; margin-top:10px; text-decoration-thickness:initial"&gt;&lt;span style="color:#000000; display:inline; float:none; text-decoration-thickness:initial"&gt;The Category Details capability (GET /category)/{id}) allows retrieving a specific category using its identifier (either ID or name).&lt;/span&gt;&lt;/p&gt;
+
+&lt;p style="margin-bottom:0px; margin-left:0px; margin-right:0px; margin-top:10px; text-decoration-thickness:initial"&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p style="margin-bottom:0px; margin-left:0px; margin-right:0px; margin-top:10px; text-decoration-thickness:initial"&gt;&lt;span style="color:#000000; display:inline; float:none; text-decoration-thickness:initial"&gt;The Feature Certified the above operations. &lt;/span&gt;&lt;/p&gt;
+
+&lt;p style="margin-bottom:0px; margin-left:0px; margin-right:0px; margin-top:10px; text-decoration-thickness:initial"&gt;&lt;span style="color:#000000; display:inline; float:none; text-decoration-thickness:initial"&gt;Return Browsing Categories by &lt;b&gt;Self Service&lt;/b&gt;&amp;nbsp;Channel from ABN AMRO&amp;nbsp;C1.&lt;/span&gt;&lt;/p&gt;
+
+&lt;p style="margin-bottom:0px; margin-left:0px; margin-right:0px; margin-top:10px; text-decoration-thickness:initial"&gt;&lt;span style="color:#000000; display:inline; float:none; text-decoration-thickness:initial"&gt;e.g:&lt;/span&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;li style="margin: 10px 0px 0px; text-decoration-thickness: initial;"&gt;Personal
+	&lt;ul&gt;
+		&lt;li style="margin: 10px 0px 0px; text-decoration-thickness: initial;"&gt;Bundles
+		&lt;ul&gt;
+			&lt;li style="margin: 10px 0px 0px; text-decoration-thickness: initial;"&gt;Payment Bundles&lt;/li&gt;
+		&lt;/ul&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;/li&gt;
+	&lt;li style="margin: 10px 0px 0px; text-decoration-thickness: initial;"&gt;Commercial&lt;/li&gt;
+	&lt;li style="margin: 10px 0px 0px; text-decoration-thickness: initial;"&gt;Private Banking&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p style="margin-bottom:0px; margin-left:0px; margin-right:0px; margin-top:10px; text-decoration-thickness:initial"&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p style="margin-bottom:0px; margin-left:0px; margin-right:0px; margin-top:10px; text-decoration-thickness:initial"&gt;&amp;nbsp;&lt;/p&gt;
+--></div><div class='je_cdata_js je_cgt' style='display:none'><!----></div><div class='je_cdata_styles je_cgt' style='display:none'><!----></div><div class='je_pr_rrj je_cgt' style='display:none'><!--[{"from":"https://onejira/","to":"https://jira/"}]--></div><div class='je_pr_ssj je_cgt' style='display:none'><!--{"sf":true,"dir_auto":true,"rs":true}--></div><div class='je_pr_atj je_cgt' style='display:none'><!--[]--></div><span class='jeditor_renderer' renderer='html' key='ABNAMRO-5' name='72d64bb4f372e7b1d0cedb3f7cbd8a0b' style='display:none'></span></div>
+            <br/>
+        </td>
+    </tr>
+    </table>
+
+Generated at Tue Jun 17 10:24:57 IDT 2025 by Nikhil Srivastava using Jira 9.12.22#9120022-sha1:231fbc3c75fa86a561ac9db4a71074080d297458.
+
+</body>
+</html>

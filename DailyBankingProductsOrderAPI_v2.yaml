@@ -1,0 +1,1639 @@
+openapi: 3.0.0
+info:
+  version: 2.2.0
+  title: Daily Banking Products Order API
+  x-apiType: enterprise
+  description: >-
+    The consumer of this API can submit an order containing 1 or more Daily
+    Banking products, can validate and order, can search for existing orders,
+    can retrieve the details of a specific order, can update or cancel an order.
+servers:
+  - url: 'https://host/daily-banking/products-orders/v2'
+    description: Environment agnostic URL for test, acceptance and production
+security:
+  - bearerAuth: []
+  - {}
+paths:
+  '/{orderId}':
+    get:
+      tags:
+        - RetrieveOrderDetails
+      description: >-
+        This endpoint is used to retrieve the details of a Daily Banking Product
+        Order which has been captured by the order management system.
+      operationId: getDailyBankingProductsOrder
+      parameters:
+        - $ref: '#/components/parameters/Subject-Token-Type'
+        - $ref: '#/components/parameters/Subject-Token'
+        - $ref: '#/components/parameters/Trace-Id'
+        - $ref: '#/components/parameters/Order-Id'
+      responses:
+        '200':
+          description: 'Full set of orderItems, documents and orderStatus for the orderId'
+          headers:
+            Trace-Id:
+              $ref: '#/components/headers/Trace-Id'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductOrder'
+        '400':
+          description: |
+            "Bad request"
+
+            Detailed Error List:
+            ---
+            - ORDER_ID_INVALID
+              > OrderId % provided in request is invalid
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Errors'
+              example:
+                errors:
+                  - code: ORDER_ID_INVALID
+                    message: OrderId % provided in request is invalid
+                    traceId: 66df42a9-6b9e-421c-b133-db72250cd6f6
+                    status: 400
+                    params:
+                      - "3456789"
+        '401':
+          description: |
+            "Authorization Error"
+            Detailed Error List: 
+            ---
+            - SUBJECT_TOKEN_INVALID
+              > Valid subject-token is required
+            - SUBJECT_TOKEN_MISSING
+              > The Subject-Token header is required
+            - SUBJECT_TOKEN_TYPE_INVALID
+              > The Subject-Token-Type header should be 'MSEC'
+            - SUBJECT_TOKEN_TYPE_MISSING
+              > The Subject-Token-Type header is required
+            - SUBJECT_UNAUTHENTICATED
+              > The subject is not authenticated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Errors'
+              example:
+                errors:
+                  - code: SUBJECT_TOKEN_MISSING
+                    message: The Subject Token header is required
+                    traceId: 924bd142-6514-445c-9e01-486820d94263
+                    status: 401
+        '403':
+          description: |
+            "Access Forbidden"
+
+            Detailed Error List: 
+            ---
+            - SUBJECT_NOT_ALLOWED
+              > The subject is not authorised to perform this operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Errors'
+              example:
+                errors:
+                  - code: SUBJECT_NOT_ALLOWED
+                    message: The Subject (End User) is not allowed to use the specific operation
+                    traceId: 6be9522f-ff5f-4932-8243-66c154880a1a
+                    status: 403
+        '404':
+          description: |
+            "Resource not found"
+            Detailed Error List:
+            ---
+            - DAILY_BANKING_PRODUCTS_ORDER_NOT_FOUND
+              > Daily Banking Products Order (identified by %) in the request could not be found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Errors'
+              example:
+                errors:
+                  - code: DAILY_BANKING_PRODUCTS_ORDER_NOT_FOUND
+                    message: Daily Banking Products Order (identified by %) in the request could not be found
+                    traceId: 66df42a9-6b9e-421c-b133-db72250cd6f6
+                    status: 404
+                    params:
+                      - "3456789"
+        '500':
+          description: >-
+            Server encountered an unexpected condition that prevented it from fulfilling the request.
+            
+            Detailed Error List: 
+            ---
+            - INTERNAL_SERVER_ERROR
+              > An error occurred while processing the request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Errors'
+              example:
+                errors:
+                  - code: INTERNAL_SERVER_ERROR
+                    message: An error occurred while processing the request
+                    traceId: 6be9522f-ff5f-4932-8243-66c154880a1a
+                    status: 500
+        '503':
+          description: >-
+            One or more downstream systems are not responsive so required data is not available
+
+            Detailed Error List: 
+            ---
+            - SUBSYSTEM_NOT_RESPONSIVE
+              > One or more downstream systems are not responsive so required data is not available
+          headers:
+            Retry-After:
+              $ref: '#/components/headers/Retry-After'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Errors'
+              example:
+                errors:
+                  - code: SUBSYSTEM_NOT_RESPONSIVE
+                    message: One or more downstream systems are not responsive so required data is not available
+                    traceId: 6be9522f-ff5f-4932-8243-66c154880a1a
+                    status: 503
+  /:
+    get:
+      tags:
+        - RetrieveOrderList
+      description: >-
+        This endpoint is used to retrieve the list of Daily Banking Product
+        Orders. Depending on the search criteria in the input, this API can
+        return the list filtered on the basis of agreementPartyClusterId (for whom the
+        product is intended) and/or order status.
+      operationId: getDailyBankingProductsOrderList
+      parameters:
+        - $ref: '#/components/parameters/Subject-Token-Type'
+        - $ref: '#/components/parameters/Subject-Token'
+        - $ref: '#/components/parameters/Trace-Id'
+        - $ref: '#/components/parameters/Agreement-Party-Cluster-Id'
+        - $ref: '#/components/parameters/Product-Id'
+        - $ref: '#/components/parameters/Order-Status'
+        - $ref: '#/components/parameters/Correlation-Id'
+        - $ref: '#/components/parameters/Page-Number'
+        - $ref: '#/components/parameters/Page-Size'
+        - $ref: '#/components/parameters/Include-Total-Number-Of-Elements'
+        - $ref: '#/components/parameters/From-Date-Time'
+        - $ref: '#/components/parameters/To-Date-Time'
+        - $ref: '#/components/parameters/Authorization-Level'
+      responses:
+        '200':
+          description: >-
+            Full set of order details and orderItems for all the Product Orders in the system based on the search criteria. Search criteria currently consists of any combination of agreementPartyClusterId, productId and orderStatus
+          headers:
+            Trace-Id:
+              $ref: '#/components/headers/Trace-Id'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductOrderList'
+        '400':
+          description: |
+            "Bad request"
+
+            Detailed Error List:
+            ---
+            - PRODUCT_ID_INCORRECT
+              > ProductId % provided in request is invalid
+            - PRODUCT_ID_NOT_SUPPORTED
+              > ProductId % provided in the input is not supported by this API
+            - AGREEMENT_PARTY_CLUSTER_ID_INCORRECT
+              > AgreementPartyClusterId % provided in request is invalid
+            - ORDER_STATUS_NOT_SUPPORTED
+              > OrderStatus(es) (orderStatus(es): %) provided in the input is not supported by this API
+            - SEARCH_CRITERIA_MISSING
+              > At least one of the search criteria query parameters (agreementPartyClusterId, productId, orderStatus, correlationId) should be provided
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Errors'
+              example:
+                errors:
+                  - code: PRODUCT_ID_INCORRECT
+                    message: ProductId % provided in request is invalid
+                    traceId: 66df42a9-6b9e-421c-b133-db72250cd6f6
+                    status: 400
+                    params:
+                      - "3621"
+        '401':
+          description: |
+            "Authorization Error"
+            Detailed Error List: 
+            ---
+            - SUBJECT_TOKEN_INVALID
+              > Valid subject-token is required
+            - SUBJECT_TOKEN_MISSING
+              > The Subject-Token header is required
+            - SUBJECT_TOKEN_TYPE_INVALID
+              > The Subject-Token-Type header should be 'MSEC'
+            - SUBJECT_TOKEN_TYPE_MISSING
+              > The Subject-Token-Type header is required
+            - SUBJECT_UNAUTHENTICATED
+              > The subject is not authenticated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Errors'
+              example:
+                errors:
+                  - code: SUBJECT_TOKEN_MISSING
+                    message: The Subject Token header is required
+                    traceId: 924bd142-6514-445c-9e01-486820d94263
+                    status: 401
+        '403':
+          description: |
+            "Access Forbidden"
+
+            Detailed Error List: 
+            ---
+            - SUBJECT_NOT_ALLOWED
+              > The subject is not authorised to perform this operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Errors'
+              example:
+                errors:
+                  - code: SUBJECT_NOT_ALLOWED
+                    message: The Subject (End User) is not allowed to use the specific operation
+                    traceId: 6be9522f-ff5f-4932-8243-66c154880a1a
+                    status: 403
+        '500':
+          description: >-
+            Server encountered an unexpected condition that prevented it from fulfilling the request.
+
+            Detailed Error List: 
+            ---
+            - INTERNAL_SERVER_ERROR
+              > An error occurred while processing the request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Errors'
+              example:
+                errors:
+                  - code: INTERNAL_SERVER_ERROR
+                    message: An error occurred while processing the request
+                    traceId: 6be9522f-ff5f-4932-8243-66c154880a1a
+                    status: 500
+        '503':
+          description: >-
+            One or more downstream systems are not responsive so required data is not available
+
+            Detailed Error List: 
+            ---
+            - SUBSYSTEM_NOT_RESPONSIVE
+              > One or more downstream systems are not responsive so required data is not available
+          headers:
+            Retry-After:
+              $ref: '#/components/headers/Retry-After'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Errors'
+              example:
+                errors:
+                  - code: SUBSYSTEM_NOT_RESPONSIVE
+                    message: One or more downstream systems are not responsive so required data is not available
+                    traceId: 6be9522f-ff5f-4932-8243-66c154880a1a
+                    status: 503
+    post:
+      tags:
+        - CreateOrder
+      description: >-
+        Create an order for 1 or more banking products in the context of Daily
+        Banking.
+      operationId: createDailyBankingProductsOrder
+      parameters:
+        - $ref: '#/components/parameters/Subject-Token-Type'
+        - $ref: '#/components/parameters/Subject-Token'
+        - $ref: '#/components/parameters/Trace-Id'
+        - $ref: '#/components/parameters/Accept-Language'
+      requestBody:
+        description: Payload for creating an Order of 1 or more Daily Banking Products.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateOrderRequest'
+            examples:
+              CREATE ORDER EXAMPLE-1:
+                value:
+                  orderRequestGeneralDetails:
+                    - correlationId: 9529e2b9-22b0-44fe-913d-8ca89330c2d7
+                      salesChannel: INTERNET_BANKING
+                  orderRequestProductDetails:
+                    - agreementPartyClusterId: 170860
+                      productId: 3621
+                      productSubCategory: SAVINGS_ACCOUNTS
+                      configurationItems:
+                        - itemId: card.iban
+                          value: NL04ABNA0123456789
+
+              CREATE ORDER EXAMPLE-2:
+                value:
+                  orderRequestGeneralDetails:
+                    - correlationId: 9529e2b9-22b0-44fe-913d-8ca89330c2d7
+                      salesChannel: INTERNET_BANKING
+                  orderRequestProductDetails:
+                    - agreementPartyClusterId: 170860
+                      productId: 70736879
+                      configurationItems:
+                        - itemId: numberOfItems
+                          value: 1
+                        - itemId: billingDetails
+                          value: null
+                        - itemId: recommendedRateAmount
+                          value: 10
+                        - itemId: recommendedRateCurrencyId
+                          value: EUR
+                        - itemId: preferredPayerAccountId
+                          value: NL04ABNA0123456789
+                        - itemId: postalAddress
+                          value: null
+                        - itemId: houseNumber
+                          value: 15
+                        - itemId: cityName
+                          value: 1186 AA
+                        - itemId: postCode
+                          value: 1186 AA
+                        - itemId: countryCode
+                          value: NL
+      responses:
+        '201':
+          description: |
+            "Created"
+          headers:
+            Trace-Id:
+              $ref: '#/components/headers/Trace-Id'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductOrder'
+              examples:
+                "Order created":
+                  value:
+                    orderGeneralDetails:
+                      orderId: 1900237965
+                      correlationId: "6F9619FF-8B86-D011-B42D-00C04FC964FF"
+                      orderStatus": "FULFILMENT_IN_PROGRESS"
+                      dossierId": "af1000000000123456"
+                      orderItemsCount": 1
+                      orderItems:
+                        - orderItemId: 98765432
+                          agreementPartyClusterId: 1327492
+                          productId: 3621
+                          orderItemStatus: "FULFILMENT_IN_PROGRESS"
+                          agreementId: "NL56ABNA0987654321"
+                          documents:
+                            - documentId: "drm_1234567890"
+                              documentName: "Voorwaarden Direct Sparen"
+                              documentType: "CONTRACT"
+                              documentLanguage: "NL"
+                          configurationItems:
+                            - itemId: statement.frequency
+                              value: MONTHLY
+
+        '400':
+          description: >
+            "One or more input parameters are invalid, Invalid messages list
+            below -"
+
+
+            Detailed error list - General Details Order :
+
+            ---
+
+            - CORRELATION_ID_MISSING
+              > correlationId (mandatory) is missing in the request
+            - DOSSIER_NOT_FOUND
+              > Dossier Id provided in the request could not be found in the Archive
+            - SALES_CHANNEL_INVALID
+              > The sales channel given in the input is not allowed
+            
+            Detailed error list:
+
+            ---  
+
+            - AGREEMENT_PARTY_CLUSTER_ID_IN_PRODUCTREQUEST_MISSING
+              > agreementPartyClusterId (mandatory) for the ProductRequest at position % is missing
+            - PRODUCT_ID_IN_PRODUCTREQUEST_MISSING
+              > productId (mandatory) for the ProductRequest at position % is missing
+            - AGREEMENT_PARTY_CLUSTER_ID_IN_PRODUCTREQUEST_INCORRECT
+              > agreementPartyClusterId % for the ProductRequest at position % is incorrect
+            - PRODUCT_ID_IN_PRODUCTREQUEST_INCORRECT
+              > productId % for the ProductRequest at position % is incorrect
+            - PRODUCT_ID_IN_PRODUCTREQUEST_NOT_SUPPORTED
+              > productId % for the ProductRequest at position % is not supported by this API
+            - PRODUCT_CONFIGURATION_IN_PRODUCTREQUEST_MISSING
+              > product configuration item (mandatory) for the ProductRequest at position % is missing
+            - PRODUCT_CONFIGURATION_IN_PRODUCTREQUEST_NOT_SUPPORTED
+              > product configuration item for the ProductRequest at position % is not supported by this API
+            - PRODUCT_CONFIGURATION_INVALID
+              > the configuration for product with orderItemId % is not valid
+            - RISK_SCORE_UNACCEPTABLE
+              > Risk score for given/ related Customer (id = %) is not acceptable
+            - RISK_SCORE_MISSING
+              > Risk score for given/ related Customer (id = %) is not available (missing)
+            - BIRTH_DATE_INVALID
+              > Birth date of given Customer (id = %) is not valid
+            - MINOR_WITHOUT_LEGAL_REPRESENTATIVE
+              > Legal Representative not found for given Customer (id = %)
+            - PREFERRED_ADDRESS_NL_HOUSE_NUMBER_MISSING
+              > Preferred address (Netherlands) houseNumber for concerned Customer is not available (missing).
+            - PREFERRED_ADDRESS_NL_POSTCODE_MISSING
+              > Preferred address (Netherlands) postCode for concerned Customer is not available (missing).
+            - PREFERRED_ADDRESS_NL_INVALID
+              > Preferred address (Netherlands) details  for concerned Customer are not valid (escape values).
+            - PREFERRED_ADDRESS_FOREIGN_INVALID
+              > Preferred address (country other than Netherlands) details for concerned Customer are not valid.
+            - PREFERRED_ADDRESS_COUNTRY_CODE_MISSING
+              > Preferred address for concerned Customer has no country details.
+            - CONTACT_NUMBER_MISSING
+              > Contact number for concerned Customer is not available (missing).
+            - TIN_MISSING
+              > Tax Identification Number for concerned Customer is not available ( missing).
+            - BSN_MISSING
+              > For input 'AgreementPartyClusterId', BSN Number is not available (missing).
+            - PLACE_OF_BIRTH_MISSING
+              > Place of birth for concerned Customer is not available (missing).
+            - BORN_IN_US_INDICATOR_MISSING
+              > Born in US data for concerned Customer is not available (missing).
+            - STATUTORY_NAME_MISSING
+              > Statutory name for concerned Customer is not available (missing).
+            - TRADE_NAME_MISSING
+              > Trade name for concerned Customer is not available (missing).
+            - LEGAL_ADDRESS_NL_MISSING
+              > Legal address for concerned Customer is not available (missing).
+            - LEGAL_ADDRESS_NL_HOUSE_NUMBER_MISSING
+              > Legal address (Netherlands) houseNumber for concerned Customer is not available (missing).
+            - LEGAL_ADDRESS_NL_POSTCODE_MISSING
+              > Legal address (Netherlands) postCode for concerned Customer is not available (missing).            
+            - LEGAL_ADDRESS_FOREIGN_INVALID
+              > Legal address (country other than Netherlands) details for concerned Customer are not valid.
+            - LEGAL_ADDRESS_COUNTRY_CODE_MISSING
+              > Legal address for concerned Customer has no country details.
+            - COUNTRY_OF_REGISTERED_OFFICE_MISSING
+              > Country of registered office for concerned Customer is not available (missing).
+            - KVK_NUMBER_MISSING
+              > Chamber of Commerce (KvK) registration details for concerned Customer are not available (missing).
+            - LEGAL_FORM_MISSING
+              > Legal Form for concerned Customer is not available (missing).
+            - DATE_OF_ESTABLISHMENT_MISSING
+              > Date of Establishment for concerned Customer is not available (missing).
+            - TAX_RESIDENCY_MISSING
+              > Tax residency or Fiscal country details for concerned Customer is not available (missing).
+            - LEGAL_FIRST_NAME_MISSING
+              > Legal First Name for concerned Customer is not available (missing).
+            - LEGAL_LAST_NAME_MISSING
+              > Legal Last Name for concerned Customer is not available (missing).
+            - LEGAL_INITIAL_NAME_MISSING
+              > Legal Initial(s) Name for concerned Customer is not available (missing).
+            - AGE_LESS_THAN_LEGAL_MINIMUM
+              > Concerned Customer is younger than legally permitted age.
+            - EMAIL_ID_MISSING
+              > Email address for concerned Customer is not available (missing).
+            - ORGANIZATION_WITHOUT_RELATED_PARTIES
+              > Expected related parties (Representative Manager /  Partner / One Man Business Owner / UBO) not found for the concerned Customer, which is an organization).
+            - NL_EENMANSZAAK_WITH_MULTIPLE_ONE_MAN_BUSINESS_OWNER
+              > Eenmanszaak with multiple owners is not allowed.
+            - ID_INFO_MISSING
+              > For input 'AgreementPartyClusterId', ID&V related data is missing in parts or completely.
+            - NOT_ELIGIBLE_DUE_TO_CUSTOMER_STATUS
+              > the customer (agreementPartyClusterId: %) is not eligible for the product (productId: %) due to his/her validation status
+            - NOT_ELIGIBLE_DUE_TO_CUSTOMER_RINGFENCING
+              > the customer (agreementPartyClusterId: %) is ringfenced hence not eligible for the product (productId: %)
+            - NOT_ELIGIBLE_DUE_TO_RELATION_CATEGORY
+              > the customer (agreementPartyClusterId: %) is not eligible for the product (productId: %) due to his/her relation category 
+            - NOT_ELIGIBLE_DUE_TO_MISSING_CURRENT_ACCOUNT
+              > the customer (agreementPartyClusterId: %) is not eligible for the product (productId: %) for s/he does not own a current account with ABN-AMRO
+            - NOT_ELIGIBLE_DUE_TO_RISK_SCORE
+              > the customer (agreementPartyClusterId: %) is not eligible for the product (productId: %) due to his/her risk score
+            - NOT_ELIGIBLE_DUE_TO_CLIENT_GROUP_CODE
+              > the customer (agreementPartyClusterId: %) is not eligible for the product (productId: %) due to his/her CGC
+            - NOT_ELIGIBLE_DUE_TO_AGE
+              > the customer (agreementPartyClusterId: %) is not eligible for the product (productId: %) due to his/her age
+            - NOT_ELIGIBLE_DUE_TO_COUNTRY_RESTRICTIONS
+              > the product (productId: %) cannot be sold to customer (agreementPartyClusterId: %) due to country restrictions
+            - NOT_ELIGIBLE_DUE_TO_APPEARANCE_TYPE
+              > the customer % is for the product % due to appearance type
+            - NOT_ELIGIBLE_DUE_TO_DISPOSITION_AUTHORITY
+              > the customer % is for the product % due to disposition authority
+            - NOT_ELIGIBLE_DUE_TO_LIFE_STATE
+              > the customer % is dead hence not eligible for the product %
+            - NOT_ELIGIBLE_DUE_TO_BO_NUMBER
+              > the customer % is not eligible for the product % due to supporting office
+            - NOT_ELIGIBLE_DUE_TO_ASSOCIATED_BUSINESS_LINE
+              > the customer % is not eligible for the product % due to associated business line
+            - NOT_ELIGIBLE_DUE_TO_MISSING_DOCUMENTS
+              > the customer % is not eligibile for the product % as s/he is missing up-to-date documents
+            - NOT_ELIIGIBLE_DUE_TO_UNDELIVERABLE_ADDRESS
+              > the customer % is not eligible for the product % as s/he did not provide an address where documents can be delivered
+            - NOT_ELIGIBLE_DUE_TO_MISSING_US_TAX_FORM
+              > the customer % is not eligible for the product % as s/he is under US tax obligation and s/he did not present a valid TAX form
+            - NOT_ELIGIBLE_DUE_TO_MISSING_RELATED_PRODUCT
+              > the custmer % does not have mandatory product %
+            - NOT_ELIGIBLE_DUE_TO_MISSING_ROVER_ACCOUNT
+              > the custmer % does not have an account needed for product %
+            - EXTERNAL_CUSTOMER_NOT_FOUND
+              > the external customer % cannot be found in the external system
+            - PRODUCT_COMBINATION_INVALID
+              > product % is not allowed to be sold in combination with product %
+            - NOT_ELIGIBLE_DUE_TO_TOO_MANY_PRODUCTS
+              > the customer (agreementPartyClusterId: %) has already the maximum number of allowed products (productId: %)
+            - TOO_MANY_PROCESS_INSTANCES_FOR_PRODUCT
+              > the customer % has already the maximum number of process instances active for the product %
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Errors'
+              example:
+                errors:
+                  - code: AGREEMENT_PARTY_CLUSTER_ID_IN_PRODUCTREQUEST_MISSING
+                    message: >-
+                      agreementPartyClusterId (mandatory) for the ProductRequest at position % is missing
+                    traceId: 66df42a9-6b9e-421c-b133-db72250cd6f6
+                    status: 400
+                    params:
+                      - '1'
+        '401':
+          description: |
+            "Authentication Error"
+
+            Detailed Error List: 
+            ---
+            - SUBJECT_UNAUTHENTICATED
+              > Subject unauthenticated
+            - SUBJECT_TOKEN_TYPE_INVALID
+              > The Subject-Token-Type header should be MSEC
+            - SUBJECT_TOKEN_INVALID
+              > The Subject-Token is invalid
+            - SUBJECT_TOKEN_EXPIRED
+              > The Subject-Token has expired
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Errors'
+              example:
+                errors:
+                  - code: SUBJECT_TOKEN_TYPE_INVALID
+                    message: The Subject-Token-Type header should be MSEC
+                    traceId: 66df42a9-6b9e-421c-b133-db72250cd6f6
+                    status: 401
+        '403':
+          description: |
+            "User Access Forbidden"
+
+            Detailed Error List: 
+            ---
+            - SUBJECT_NOT_ALLOWED
+              > Subject (End User) is not allowed to access the API
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Errors'
+              example:
+                errors:
+                  - code: SUBJECT_NOT_ALLOWED
+                    message: Subject (End User) is not allowed to access the API
+                    traceId: 66df42a9-6b9e-421c-b133-db72250cd6f6
+                    status: 403
+        406:
+          description: |
+            Accept header value not supported. When the language is other than NL, EN or DE.
+            
+            Detailed Error List: 
+            ---
+            - ACCEPT_LANGUAGE_INVALID
+              > Accept header value not supported
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Errors'
+              example:
+                errors:
+                  - code: ACCEPT_LANGUAGE_INVALID
+                    message: Accept header value not supported
+                    traceId: 66df42a9-6b9e-421c-b133-db72250cd6f6
+                    status: 406
+        '500':
+          description: >-
+            Server encountered an unexpected condition that prevented it from fulfilling the request.
+
+            Detailed Error List: 
+            ---
+            - INTERNAL_SERVER_ERROR
+              > An error occurred while processing the request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Errors'
+              example:
+                errors:
+                  - code: INTERNAL_SERVER_ERROR
+                    message: An error occurred while processing the request
+                    traceId: 6be9522f-ff5f-4932-8243-66c154880a1a
+                    status: 500
+        '503':
+          description: >-
+            One or more downstream systems are not responsive so required data is not available
+
+            Detailed Error List: 
+            ---
+            - SUBSYSTEM_NOT_RESPONSIVE
+              > One or more downstream systems are not responsive so required data is not available
+          headers:
+            Retry-After:
+              $ref: '#/components/headers/Retry-After'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Errors'
+              example:
+                errors:
+                  - code: SUBSYSTEM_NOT_RESPONSIVE
+                    message: One or more downstream systems are not responsive so required data is not available
+                    traceId: 6be9522f-ff5f-4932-8243-66c154880a1a
+                    status: 503
+  '/{orderId}/confirmation':
+    post:
+      tags:
+        - Confirmation
+      description: >-
+        Situation wherein customer signature (exa: generic signing) is not
+        mandated - consumer applications can make use of this endpoint to convey
+        customer's consent to proceed with fulfilment of a specific Order
+        (identified by ```orderId``` in the path)
+      operationId: confirmDailyBankingProductsOrder
+      parameters:
+        - $ref: '#/components/parameters/Subject-Token-Type'
+        - $ref: '#/components/parameters/Subject-Token'
+        - $ref: '#/components/parameters/Trace-Id'
+        - $ref: '#/components/parameters/Referer'
+        - $ref: '#/components/parameters/User-Agent'
+        - $ref: '#/components/parameters/Order-Id'
+      responses:
+        '200':
+          description: sign item created
+          headers:
+            Trace-Id:
+              $ref: '#/components/headers/Trace-Id'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductOrder'
+        '204':
+          description: |
+            "No Content"
+          headers:
+            Trace-Id:
+              $ref: '#/components/headers/Trace-Id'
+        '400':
+          description: |
+            "Bad request"
+
+            Detailed Error List:
+            ---
+            - ORDER_ID_INVALID
+              > OrderId % provided in request is invalid
+            - ORDER_CAN_NOT_BE_CONFIRMED
+              > Order (orderId: %) can not be confirmed as it is either already fulfilled or cancelled or is in a state that prohibits order to be further processed
+            - PRODUCT_CONFIGURATION_INVALID
+              > the configuration for product with orderItemId % is not valid
+            - RISK_SCORE_UNACCEPTABLE
+              > Risk score for given/ related Customer (id = %) is not acceptable
+            - RISK_SCORE_MISSING
+              > Risk score for given/ related Customer (id = %) is not available (missing)
+            - BIRTH_DATE_INVALID
+              > Birth date of given Customer (id = %) is not valid
+            - MINOR_WITHOUT_LEGAL_REPRESENTATIVE
+              > Legal Representative not found for given Customer (id = %)
+            - PREFERRED_ADDRESS_NL_HOUSE_NUMBER_MISSING
+              > Preferred address (Netherlands) houseNumber for concerned Customer is not available (missing).
+            - PREFERRED_ADDRESS_NL_POSTCODE_MISSING
+              > Preferred address (Netherlands) postCode for concerned Customer is not available (missing).
+            - PREFERRED_ADDRESS_NL_INVALID
+              > Preferred address (Netherlands) details  for concerned Customer are not valid (escape values).
+            - PREFERRED_ADDRESS_FOREIGN_INVALID
+              > Preferred address (country other than Netherlands) details for concerned Customer are not valid.
+            - PREFERRED_ADDRESS_COUNTRY_CODE_MISSING
+              > Preferred address for concerned Customer has no country details.
+            - CONTACT_NUMBER_MISSING
+              > Contact number for concerned Customer is not available (missing).
+            - TIN_MISSING
+              > Tax Identification Number for concerned Customer is not available ( missing).
+            - BSN_MISSING
+              > For input 'AgreementPartyClusterId', BSN Number is not available (missing).
+            - PLACE_OF_BIRTH_MISSING
+              > Place of birth for concerned Customer is not available (missing).
+            - BORN_IN_US_INDICATOR_MISSING
+              > Born in US data for concerned Customer is not available (missing).
+            - STATUTORY_NAME_MISSING
+              > Statutory name for concerned Customer is not available (missing).
+            - TRADE_NAME_MISSING
+              > Trade name for concerned Customer is not available (missing).
+            - LEGAL_ADDRESS_NL_MISSING
+              > Legal address for concerned Customer is not available (missing).
+            - LEGAL_ADDRESS_NL_HOUSE_NUMBER_MISSING
+              > Legal address (Netherlands) houseNumber for concerned Customer is not available (missing).
+            - LEGAL_ADDRESS_NL_POSTCODE_MISSING
+              > Legal address (Netherlands) postCode for concerned Customer is not available (missing).            
+            - LEGAL_ADDRESS_FOREIGN_INVALID
+              > Legal address (country other than Netherlands) details for concerned Customer are not valid.
+            - LEGAL_ADDRESS_COUNTRY_CODE_MISSING
+              > Legal address for concerned Customer has no country details.
+            - COUNTRY_OF_REGISTERED_OFFICE_MISSING
+              > Country of registered office for concerned Customer is not available (missing).
+            - KVK_NUMBER_MISSING
+              > Chamber of Commerce (KvK) registration details for concerned Customer are not available (missing).
+            - LEGAL_FORM_MISSING
+              > Legal Form for concerned Customer is not available (missing).
+            - DATE_OF_ESTABLISHMENT_MISSING
+              > Date of Establishment for concerned Customer is not available (missing).
+            - TAX_RESIDENCY_MISSING
+              > Tax residency or Fiscal country details for concerned Customer is not available (missing).
+            - LEGAL_FIRST_NAME_MISSING
+              > Legal First Name for concerned Customer is not available (missing).
+            - LEGAL_LAST_NAME_MISSING
+              > Legal Last Name for concerned Customer is not available (missing).
+            - LEGAL_INITIAL_NAME_MISSING
+              > Legal Initial(s) Name for concerned Customer is not available (missing).
+            - AGE_LESS_THAN_LEGAL_MINIMUM
+              > Concerned Customer is younger than legally permitted age.
+            - EMAIL_ID_MISSING
+              > Email address for concerned Customer is not available (missing).
+            - ORGANIZATION_WITHOUT_RELATED_PARTIES
+              > Expected related parties (Representative Manager /  Partner / One Man Business Owner / UBO) not found for the concerned Customer, which is an organization).
+            - NL_EENMANSZAAK_WITH_MULTIPLE_ONE_MAN_BUSINESS_OWNER
+              > Eenmanszaak with multiple owners is not allowed.
+            - ID_INFO_MISSING
+              > For input 'AgreementPartyClusterId', ID&V related data is missing in parts or completely.
+            - NOT_ELIGIBLE_DUE_TO_CUSTOMER_STATUS
+              > the customer (agreementPartyClusterId: %) is not eligible for the product (productId: %) due to his/her validation status
+            - NOT_ELIGIBLE_DUE_TO_CUSTOMER_RINGFENCING
+              > the customer (agreementPartyClusterId: %) is ringfenced hence not eligible for the product (productId: %)
+            - NOT_ELIGIBLE_DUE_TO_RELATION_CATEGORY
+              > the customer (agreementPartyClusterId: %) is not eligible for the product (productId: %) due to his/her relation category 
+            - NOT_ELIGIBLE_DUE_TO_MISSING_CURRENT_ACCOUNT
+              > the customer (agreementPartyClusterId: %) is not eligible for the product (productId: %) for s/he does not own a current account with ABN-AMRO
+            - NOT_ELIGIBLE_DUE_TO_RISK_SCORE
+              > the customer (agreementPartyClusterId: %) is not eligible for the product (productId: %) due to his/her risk score
+            - NOT_ELIGIBLE_DUE_TO_CLIENT_GROUP_CODE
+              > the customer (agreementPartyClusterId: %) is not eligible for the product (productId: %) due to his/her CGC
+            - NOT_ELIGIBLE_DUE_TO_AGE
+              > the customer (agreementPartyClusterId: %) is not eligible for the product (productId: %) due to his/her age
+            - NOT_ELIGIBLE_DUE_TO_COUNTRY_RESTRICTIONS
+              > the product (productId: %) cannot be sold to customer (agreementPartyClusterId: %) due to country restrictions
+            - NOT_ELIGIBLE_DUE_TO_APPEARANCE_TYPE
+              > the customer % is for the product % due to appearance type
+            - NOT_ELIGIBLE_DUE_TO_DISPOSITION_AUTHORITY
+              > the customer % is for the product % due to disposition authority
+            - NOT_ELIGIBLE_DUE_TO_LIFE_STATE
+              > the customer % is dead hence not eligible for the product %
+            - NOT_ELIGIBLE_DUE_TO_BO_NUMBER
+              > the customer % is not eligible for the product % due to supporting office
+            - NOT_ELIGIBLE_DUE_TO_ASSOCIATED_BUSINESS_LINE
+              > the customer % is not eligible for the product % due to associated business line
+            - NOT_ELIGIBLE_DUE_TO_MISSING_DOCUMENTS
+              > the customer % is not eligibile for the product % as s/he is missing up-to-date documents
+            - NOT_ELIIGIBLE_DUE_TO_UNDELIVERABLE_ADDRESS
+              > the customer % is not eligible for the product % as s/he did not provide an address where documents can be delivered
+            - NOT_ELIGIBLE_DUE_TO_MISSING_US_TAX_FORM
+              > the customer % is not eligible for the product % as s/he is under US tax obligation and s/he did not present a valid TAX form
+            - NOT_ELIGIBLE_DUE_TO_MISSING_RELATED_PRODUCT
+              > the custmer % does not have mandatory product %
+            - NOT_ELIGIBLE_DUE_TO_MISSING_ROVER_ACCOUNT
+              > the custmer % does not have an account needed for product %
+            - EXTERNAL_CUSTOMER_NOT_FOUND
+              > the external customer % cannot be found in the external system
+            - PRODUCT_COMBINATION_INVALID
+              > product % is not allowed to be sold in combination with product %
+            - NOT_ELIGIBLE_DUE_TO_TOO_MANY_PRODUCTS
+              > the customer (agreementPartyClusterId: %) has already the maximum number of allowed products (productId: %)
+            - TOO_MANY_PROCESS_INSTANCES_FOR_PRODUCT
+              > the customer % has already the maximum number of process instances active for the product %
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Errors'
+              example:
+                errors:
+                  - code: ORDER_ID_INVALID
+                    message: OrderId % provided in request is invalid
+                    traceId: 66df42a9-6b9e-421c-b133-db72250cd6f6
+                    status: 400
+                    params:
+                      - "56878"
+        '401':
+          description: |
+            "Authentication Error"
+
+            Detailed Error List: 
+            ---
+            - SUBJECT_UNAUTHENTICATED
+              > Subject unauthenticated
+            - SUBJECT_TOKEN_TYPE_INVALID
+              > The Subject-Token-Type header should be MSEC
+            - SUBJECT_TOKEN_INVALID
+              > The Subject-Token is invalid
+            - SUBJECT_TOKEN_EXPIRED
+              > The Subject-Token has expired
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Errors'
+              example:
+                errors:
+                  - code: SUBJECT_TOKEN_TYPE_INVALID
+                    message: The Subject-Token-Type header should be MSEC
+                    traceId: 66df42a9-6b9e-421c-b133-db72250cd6f6
+                    status: 401
+        '403':
+          description: |
+            "User Access Forbidden"
+
+            Detailed Error List: 
+            ---
+            - SUBJECT_NOT_ALLOWED
+              > Subject (End User) is not allowed to access the API
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Errors'
+              example:
+                errors:
+                  - code: SUBJECT_NOT_ALLOWED
+                    message: Subject (End User) is not allowed to access the API
+                    traceId: 66df42a9-6b9e-421c-b133-db72250cd6f6
+                    status: 403
+        '404':
+          description: |
+            "Resource not found"
+            Detailed Error List:
+            ---
+            - DAILY_BANKING_PRODUCTS_ORDER_NOT_FOUND
+              > Daily Banking Products Order (identified by %) in the request could not be found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Errors'
+              example:
+                errors:
+                  - code: DAILY_BANKING_PRODUCTS_ORDER_NOT_FOUND
+                    message: Daily Banking Products Order (identified by %) in the request could not be found
+                    traceId: 66df42a9-6b9e-421c-b133-db72250cd6f6
+                    status: 404
+                    params:
+                      - "3621"
+        '500':
+          description: >-
+            Server encountered an unexpected condition that prevented it from fulfilling the request.
+
+            Detailed Error List: 
+            ---
+            - INTERNAL_SERVER_ERROR
+              > An error occurred while processing the request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Errors'
+              example:
+                errors:
+                  - code: INTERNAL_SERVER_ERROR
+                    message: An error occurred while processing the request
+                    traceId: 6be9522f-ff5f-4932-8243-66c154880a1a
+                    status: 500
+        '503':
+          description: >-
+            One or more downstream systems are not responsive so required data is not available
+
+            Detailed Error List: 
+            ---
+            - SUBSYSTEM_NOT_RESPONSIVE
+              > One or more downstream systems are not responsive so required data is not available
+          headers:
+            Retry-After:
+              $ref: '#/components/headers/Retry-After'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Errors'
+              example:
+                errors:
+                  - code: SUBSYSTEM_NOT_RESPONSIVE
+                    message: One or more downstream systems are not responsive so required data is not available
+                    traceId: 6be9522f-ff5f-4932-8243-66c154880a1a
+                    status: 503
+  '/{orderId}/cancellation':
+    post:
+      tags:
+        - Cancellation
+      description: >-
+        Consumer applications can use this endpoint to cancel a specific Product
+        Order (identified by ```orderId``` in the path)
+      operationId: cancelDailyBankingProductsOrder
+      parameters:
+        - $ref: '#/components/parameters/Subject-Token-Type'
+        - $ref: '#/components/parameters/Subject-Token'
+        - $ref: '#/components/parameters/Trace-Id'
+        - $ref: '#/components/parameters/Order-Id'
+      responses:
+        '204':
+          description: |
+            "No Content"
+          headers:
+            Trace-Id:
+              $ref: '#/components/headers/Trace-Id'
+        '400':
+          description: |
+            "Bad request"
+
+            Detailed Error List:
+            ---
+            - ORDER_ID_INVALID
+              > OrderId % provided in request is invalid
+            - ORDER_CAN_NOT_BE_CANCELLED
+              > Order can not be cancelled as order is either already fulfilled or confirmed(or signed, depending on the products in the order) or is in a state that prohibits order to be further processed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Errors'
+              example:
+                errors:
+                  - code: ORDER_ID_INVALID
+                    message: OrderId % provided in request is invalid
+                    traceId: 66df42a9-6b9e-421c-b133-db72250cd6f6
+                    status: 400
+                    params:
+                      - "3621"
+        '401':
+          description: |
+            "Authentication Error"
+
+            Detailed Error List: 
+            ---
+            - SUBJECT_UNAUTHENTICATED
+              > Subject unauthenticated
+            - SUBJECT_TOKEN_TYPE_INVALID
+              > The Subject-Token-Type header should be MSEC
+            - SUBJECT_TOKEN_INVALID
+              > The Subject-Token is invalid
+            - SUBJECT_TOKEN_EXPIRED
+              > The Subject-Token has expired
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Errors'
+              example:
+                errors:
+                  - code: SUBJECT_TOKEN_TYPE_INVALID
+                    message: The Subject-Token-Type header should be MSEC
+                    traceId: 66df42a9-6b9e-421c-b133-db72250cd6f6
+                    status: 401
+        '403':
+          description: |
+            "User Access Forbidden"
+
+            Detailed Error List: 
+            ---
+            - SUBJECT_NOT_ALLOWED
+              > Subject (End User) is not allowed to access the API
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Errors'
+              example:
+                errors:
+                  - code: SUBJECT_NOT_ALLOWED
+                    message: Subject (End User) is not allowed to access the API
+                    traceId: 66df42a9-6b9e-421c-b133-db72250cd6f6
+                    status: 403
+        '404':
+          description: |
+            "Resource not found"
+            Detailed Error List:
+            ---
+            - DAILY_BANKING_PRODUCTS_ORDER_NOT_FOUND
+              > Daily Banking Products Order (identified by %) in the request could not be found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Errors'
+              example:
+                errors:
+                  - code: DAILY_BANKING_PRODUCTS_ORDER_NOT_FOUND
+                    message: Daily Banking Products Order (identified by %) in the request could not be found
+                    traceId: 66df42a9-6b9e-421c-b133-db72250cd6f6
+                    status: 404
+                    params:
+                      - "3621"
+        '500':
+          description: >-
+            Server encountered an unexpected condition that prevented it from fulfilling the request.
+
+            Detailed Error List: 
+            ---
+            - INTERNAL_SERVER_ERROR
+              > An error occurred while processing the request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Errors'
+              example:
+                errors:
+                  - code: INTERNAL_SERVER_ERROR
+                    message: An error occurred while processing the request
+                    traceId: 6be9522f-ff5f-4932-8243-66c154880a1a
+                    status: 500
+        '503':
+          description: >-
+            One or more downstream systems are not responsive so required data is not available
+
+            Detailed Error List: 
+            ---
+            - SUBSYSTEM_NOT_RESPONSIVE
+              > One or more downstream systems are not responsive so required data is not available
+          headers:
+            Retry-After:
+              $ref: '#/components/headers/Retry-After'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Errors'
+              example:
+                errors:
+                  - code: SUBSYSTEM_NOT_RESPONSIVE
+                    message: One or more downstream systems are not responsive so required data is not available
+                    traceId: 6be9522f-ff5f-4932-8243-66c154880a1a
+                    status: 503
+components:
+  securitySchemes:
+    bearerAuth:
+      description: "Placeholder for Enterprise Token."
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  headers:
+    Trace-Id:
+      description: Unique end-2-end trace id received from the consumer
+      schema:
+        type: string
+      example: VGhpcyBpcyBhIG5pY2UgdGV4dCBlbmNvZGVkIGluIEJhc2U2NA==
+    Retry-After:
+      description: Number of seconds after which a retry should happen.
+      schema:
+        type: integer
+      example: 120
+  parameters:
+    Order-Id:
+      name: orderId
+      in: path
+      required: true
+      description: Unique identifier of an order.
+      schema:
+        type: integer
+        format: int64
+      example: '1900237965'
+    Agreement-Party-Cluster-Id:
+      name: agreementPartyClusterId
+      in: query
+      description: Unique identifier of a customer.
+      schema:
+        type: integer
+        format: int64
+      example: '1900237965'
+    Product-Id:
+      name: productId
+      in: query
+      description: >-
+        "Unique identifier of a product. For the products in scope, please refer: https://confluence.int.abnamro.com/display/OMDBPE/Product+Roadmap"
+      schema:
+        type: integer
+        format: int64
+      example: '3621'
+    Order-Status:
+      name: orderStatus
+      in: query
+      description: |
+        Parameter that allows filtering of results based on the possible statuses of the order
+      schema:
+        type: array
+        items:
+          $ref: '#/components/schemas/OrderStatus'
+        minItems: 1
+        maxItems: 5
+      style: form
+      explode: false
+      example: FULFILMENT_IN_PROGRESS
+    Correlation-Id:
+      name: correlationId
+      in: query
+      description: >-
+        Unique identifier for an Order (if applicable), from Consumer application. For Consumer application, they may maintain correlation
+        between Order ID (in response) of this API and their own Unique ID for the Order being placed.
+      schema:
+        type: string
+      example: VGhpcyBpcyBhIG5pY2UgdGV4dCBlbmNvZGVkIGluIEJhc2U2NA==
+    Page-Number:
+      name: pageNumber
+      in: query
+      description: Number of the page to be returned. It takes values 1, 2, 3 etc. Default value
+      schema:
+        type: integer
+        format: int32
+        default: 1
+      example: 1
+    Page-Size:
+      name: pageSize
+      in: query
+      description: Size of the page to be returned, where pageSize <= 100.
+      schema:
+        type: integer
+        format: int64
+        default: 20
+      example: 20
+    Include-Total-Number-Of-Elements:
+      name: includeTotalNumberOfElements
+      in: query
+      description: When set to true, the total number of records in the result set is returned.
+      schema:
+        type: boolean
+        default: false
+      example: true
+    From-Date-Time:
+      name: fromDateTime
+      in: query
+      description: From date when to get the list of orders. This date will be checked against the last updated date of the order
+      required: false
+      schema:
+        type: string
+        format: date-time
+      example: '2019-04-23T12:59:29.969Z'
+    To-Date-Time:
+      name: toDateTime
+      in: query
+      description: To date when to get the list of orders. This date will be checked against the last updated date of the order
+      required: false
+      schema:
+        type: string
+        format: date-time
+      example: '2019-04-23T12:59:29.969Z'
+    Authorization-Level:
+      name: authorizationLevel
+      in: query
+      description: Level of assurance as we receive from enterpriseToken. allowed values are 10, 20 and 30.
+      required: false
+      schema:
+        type: string
+      example: '20'
+    Subject-Token-Type:
+      description: specifies the authorisation mechanism. Conditional mandatory  (required when Subject (end-user) validation and/or reach or authorization check with CASPER is based on legacy MSEC Token and enterprise token is not present )
+      in: header
+      name: Subject-Token-Type
+      schema:
+        type: string
+        enum:
+          - MSEC
+      example: MSEC
+    Subject-Token:
+      name: Subject-Token
+      in: header
+      description: the consumer security token. Conditional mandatory (required when Subject (end-user) validation and/or reach or authorization check with CASPER is based on legacy MSEC Token and enterprise token is not present)
+      schema:
+        type: string
+      example: VGhpcyBpcyBhIG5pY2UgdGV4dCBlbmNvZGVkIGluIEJhc2U2NA==
+    Trace-Id:
+      name: Trace-Id
+      in: header
+      description: Unique end-2-end trace id received from the consumer
+      schema:
+        type: string
+      example: VGhpcyBpcyBhIG5pY2UgdGV4dCBlbmNvZGVkIGluIEJhc2U2NA==
+    Referer:
+      in: "header"
+      name: "Referer"
+      description: "The HTTP Referer request header contains the absolute or partial address from which a resource has been requested. The Referer header allows a server to identify referring pages that people are visiting from or where requested resources are being used."
+      required: false
+      schema:
+        type: string
+        example: "12355678910"
+    User-Agent:
+      in: "header"
+      name: "User-Agent"
+      description: "User agent used in the session."
+      required: false
+      schema:
+        type: string
+        example: "1233455566"
+    Accept-Language:
+      name: Accept-Language
+      in: header
+      description: |-
+        Language code which should be used to generate the documents. If filled, the provided language code will be used, otherwise the default language code nl will be used. Language code should be given as per ISO 639-1 standard.
+      schema:
+        type: string
+        pattern: '^[a-z][a-z]$'
+      example: nl
+  schemas:
+    OrderStatus:
+      description: Status of the order placed. See the link for details - https://confluence.int.abnamro.com/pages/viewpage.action?pageId=485286367
+      example: FULFILMENT_IN_PROGRESS
+      type: string
+      enum:
+        - DRAFT
+        - FAILED
+        - REJECTED
+        - INITIATED
+        - CONFIRMED
+        - SIGNING_INITIATED
+        - PARTIALLY_SIGNED
+        - FULLY_SIGNED
+        - FULFILMENT_IN_PROGRESS
+        - FULFILLED
+        - CLOSED
+        - CANCELLED
+        - EXPIRED
+        - CANNOT_BE_FULFILLED
+    OrderItemStatus:
+      description: Status of an order item in an order
+      example: FULFILMENT_IN_PROGRESS
+      type: string
+      enum:
+        - DRAFT
+        - FAILED
+        - REJECTED
+        - INITIATED
+        - CONFIRMED
+        - SIGNING_INITIATED
+        - PARTIALLY_SIGNED
+        - FULLY_SIGNED
+        - SIGN_ITEM_DELETED
+        - SIGN_ITEM_EXPIRED
+        - FULFILMENT_IN_PROGRESS
+        - FULFILMENT_INTERRUPTED
+        - FULFILLED
+        - CLOSED
+        - CANCELLED
+        - EXPIRED
+        - CANNOT_BE_FULFILLED
+        - COMMUNICATION_DONE
+    Errors:
+      description: This contains a list of errors returned by the API
+      type: object
+      properties:
+        errors:
+          type: array
+          minItems: 1
+          maxItems: 10
+          items:
+            $ref: '#/components/schemas/Error'
+    Error:
+      type: object
+      required:
+        - code
+        - message
+        - status
+      properties:
+        code:
+          description: A unique and meaningful code for the error
+          type: string
+        message:
+          description: >-
+            This contains a human readable description for the code and is
+            specifically meant for debug purposes
+          type: string
+        status:
+          description: >-
+            The HTTP response status code under which the code has been
+            categorized
+          type: integer
+          format: int32
+        traceId:
+          description: >-
+            The unique id sent in the request header for end to end traceability
+            of an API call especially in case of errors
+          type: string
+        params:
+          type: array
+          description: >-
+            This contains dynamic values which need to be returned sometimes by
+            the API in addition to the code
+          minItems: 0
+          maxItems: 10
+          items:
+            type: string
+    CreateOrderRequest:
+      description: >-
+        Details of the Order, in general, along with details of all requested
+        Product(s) in the Order.
+      type: object
+      required:
+        - orderRequestGeneralDetails
+        - orderRequestProductDetails
+      properties:
+        orderRequestGeneralDetails:
+          $ref: '#/components/schemas/OrderRequestGeneralDetails'
+        orderRequestProductDetails:
+          $ref: '#/components/schemas/OrderRequestProductDetails'
+    OrderRequestGeneralDetails:
+      description: General details of a new Order.
+      type: object
+      required:
+        - correlationId
+      properties:
+        correlationId:
+          description: >-
+            Unique identifier for an Order (if applicable), from Consumer
+            application. For Consumer application, they may maintain correlation
+            between Order ID (in response) of this API and their own Unique ID
+            for the Order being placed. correlationId will be returned back
+            as-is in response of the API for Consumer application's reference.
+          type: string
+          example: 6F9619FF-8B86-D011-B42D-00C04FC964FF
+        dossierId:
+          description: >-
+            Unique Id of a Dossier for the Order, if already created by Consumer
+            application. If not available, a new Dossier (DDE) will be requested
+            by the API. Thus, this is an optional attribute
+          type: string
+          example: af1000000000123456
+        salesChannel:
+          description: >-
+            Sales channel from where order is placed. ----------
+            INTERNET_BANKING : Internet Banking MOBILE_BANKING: Mobile Banking
+            (ABN AMRO APP) INTERNET_OPEN_WEBSITE: Public website of ABN AMRO
+            (also known as Open Domain). VRS_SELF_SERVICE_CC: Voice Response
+            System, self service at Call Center. BRANCH_RETAIL_BANKING: Branch
+            Office - Retail Banking DISTRICT_OFFICE_R_PB: District Office -
+            Retail and Private Banking PRIVATE_BANKING: Private Office (Mees
+            Pierson) BRANCH_COMMERCIAL_BANKING: Branch Office - Commercial
+            Banking DISTRICT_OFFICE_C_MB: District Office - Commercial and
+            Merchant Banking ASC: ABN AMRO Service Center FULFILMENT_OFFICE:
+            Fulfilment office (Accounts & Customers) INTERMEDIARY: Intermediary
+            or Agent that sells products of the Bank. OTHER: Any other channel,
+            not listed above.
+          type: string
+          enum:
+            - INTERNET_BANKING
+            - MOBILE_BANKING
+            - INTERNET_OPEN_WEBSITE
+            - VRS_SELF_SERVICE_CC
+            - BRANCH_RETAIL_BANKING
+            - BRANCH_COMMERCIAL_BANKING
+            - PRIVATE_BANKING
+            - DISTRICT_OFFICE_R_PB
+            - DISTRICT_OFFICE_C_MB
+            - ASC
+            - FULFILMENT_OFFICE
+            - INTERMEDIARY
+            - OTHER
+    OrderRequestProductDetails:
+      description: >-
+        List of details of 1 or more of the requested daily banking product(s) in the Order
+      type: array
+      minItems: 1
+      maxItems: 5
+      items:
+        $ref: '#/components/schemas/ProductRequest'
+      example:
+        - agreementPartyClusterId: 13274929
+          productId: 3621
+    ProductRequest:
+      description: Basic input from calling API for buying/servicing a product
+      type: object
+      required:
+        - agreementPartyClusterId
+        - productId
+      properties:
+        agreementPartyClusterId:
+          description: >-
+            Identification of the individual or organisation for whom the product will be bought/serviced
+          type: integer
+          format: int32
+          example: 13274929
+        productId:
+          description: >-
+            The product id of the product which will be bought/serviced
+          type: integer
+          format: int32
+          example: 3621
+        configurationItems:
+          description: a collection of configuration items that the customer (or channel) has asked for as part of requesting this product
+          type: array
+          items:
+            $ref: '#/components/schemas/ConfigurationItem'
+          minItems: 0
+          maxItems: 50
+    ProductOrder:
+      description: Contains the details of an order
+      type: object
+      required:
+        - orderGeneralDetails
+        - orderItems
+      properties:
+        orderGeneralDetails:
+          $ref: '#/components/schemas/OrderGeneralDetails'
+        orderItems:
+          $ref: '#/components/schemas/OrderItemList'
+    OrderGeneralDetails:
+      description: General details of an accepted Order.
+      type: object
+      required:
+        - orderId
+        - correlationId
+        - orderStatus
+        - dossierId
+        - orderItemsCount
+      properties:
+        orderId:
+          description: Unique identifier of the order created.
+          type: integer
+          format: int64
+          example: '1900237965'
+        correlationId:
+          description: >-
+            Unique identifier for an Order (if applicable), from Consumer
+            application.
+          type: string
+          example: 6F9619FF-8B86-D011-B42D-00C04FC964FF
+        orderStatus:
+          $ref: '#/components/schemas/OrderStatus'
+        dossierId:
+          description: >-
+            Unique Id of a Dossier for the Order. If it was already created and
+            passed in the request by Consumer application - then same is
+            returned here. Otherwise, a new Dossier (DDE) is created by the API
+            and Id of that is returned here.
+          type: string
+          example: af1000000000123456
+        orderItemsCount:
+          description: Number of order items in this order
+          type: integer
+          format: int32
+          example: 1
+    OrderItemList:
+      description: Details of various Order Items which are part of the Product Order.
+      type: array
+      minItems: 1
+      maxItems: 5
+      items:
+        $ref: '#/components/schemas/OrderItem'
+    OrderItem:
+      description: Details of individual Order Item.
+      type: object
+      required:
+        - agreementPartyClusterId
+        - productId
+        - orderItemStatus
+      allOf:
+        - $ref: '#/components/schemas/OrderItemBrief'
+      properties:
+        agreementId:
+          description: >-
+            The agreementId generated for the product. For example, for Direct
+            Savings it will be the generated IBAN
+          type: string
+          example: NL56ABNA0987654321
+        signObjectId:
+          description: Contains the Id of the sign object created for the product
+          type: string
+          example: 56df2f8c-e075-4136-a71e-d2a14ba046c7
+        documents:
+          description: >-
+            This lists the documents which are relevant for the specific order
+            item
+          type: array
+          items:
+            $ref: '#/components/schemas/OrderItemDocument'
+          minItems: 0
+          maxItems: 350
+        configurationItems:
+          description: a collection of configuration items that the customer (or channel) has asked for as part of requesting this product
+          type: array
+          items:
+            $ref: '#/components/schemas/ConfigurationItem'
+          minItems: 0
+          maxItems: 50
+    OrderItemDocument:
+      description: Details of individual Document.
+      type: object
+      required:
+        - documentId
+        - documentName
+      properties:
+        documentId:
+          description: Unique document id required to retrieve the document.
+          type: string
+          example: drm_1234567890
+        documentName:
+          description: Business meaningful name of the document.
+          type: string
+          example: Voorwaarden Direct Sparen
+        documentType:
+          description: The type of document. Can be either a contract or conditions
+          example: CONTRACT
+          type: string
+          enum:
+            - CONTRACT
+            - CONDITIONS
+        documentLanguage:
+          description: The language in which the document is written
+          example: NL
+          type: string
+          enum:
+            - NL
+            - EN
+            - DE
+    ProductOrderList:
+      description: Details of all the product orders based on the search criteria
+      type: object
+      required:
+        - productOrders
+      properties:
+        totalNumberOfElements:
+          description: This contains total number of records in the database matching the search criteria. This is returned if `includeTotalNumberOfElements` is set to true in the input
+          type: integer
+          format: int32
+          example: 200
+        currentPage:
+          description: Shows the current page number in the list of pages which contains retrieved product orders
+          type: integer
+          format: int32
+          example: 2
+        totalNumberOfPages:
+          description: Shows the total number of pages which contains retrieved product orders
+          type: integer
+          format: int32
+          example: 20
+        productOrders:
+          type: array
+          minItems: 1
+          maxItems: 2000
+          items:
+            $ref: '#/components/schemas/ProductOrderBrief'
+    ProductOrderBrief:
+      description: Contains order and order item details of a product order
+      type: object
+      required:
+        - orderGeneralDetails
+        - orderItems
+      properties:
+        orderGeneralDetails:
+          $ref: '#/components/schemas/OrderGeneralDetails'
+        orderItems:
+          $ref: '#/components/schemas/OrderItemBriefList'
+    OrderItemBriefList:
+      description: Brief details of various Order Items which are part of the Product Order.
+      type: array
+      minItems: 1
+      maxItems: 20
+      items:
+        $ref: '#/components/schemas/OrderItemBrief'
+    OrderItemBrief:
+      description: Brief details of individual Order Item.
+      type: object
+      required:
+        - orderItemId
+        - agreementPartyClusterId
+        - productId
+        - orderItemStatus
+      properties:
+        orderItemId:
+          description: The unique id for each order item
+          type: integer
+          format: int32
+          example: 98765432
+        agreementPartyClusterId:
+          description: >-
+            Identification of the individual or organisation for whom product is
+            requested.
+          type: integer
+          format: int32
+          example: 1327492
+        productId:
+          description: One of the requested product(s) in the Order request.
+          type: integer
+          format: int32
+          example: 3621
+        orderItemStatus:
+          $ref: '#/components/schemas/OrderItemStatus'
+    ConfigurationItem:
+      type: object
+      required:
+        - itemId
+        - value
+      properties:
+        itemId:
+          description: the identifier for the configuration item
+          type: string
+          example: 'statement.frequency'
+        value:
+          description: the value chosen (by customer or by channel) for the current configuration item
+          type: string
+          example: 'MONTHLY'
